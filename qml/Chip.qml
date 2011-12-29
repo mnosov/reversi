@@ -50,6 +50,13 @@ Item {
     }
 
     Image {
+        id: checkPlaceHolder
+        visible: canMoveCurrent && rootWindow.showPossibleMoves && rootWindow.humanMove && !gameEngine.setupMode
+        anchors.centerIn: parent
+        source: "qrc:/resources/check.png"
+    }
+
+    Image {
         id: imgContent
         anchors.centerIn: parent
         source: ":/resources/bw"+chipRoot.imgIndex+".png"

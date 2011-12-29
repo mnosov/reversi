@@ -20,6 +20,7 @@
  * Boston, MA 02110-1301, USA.
  *
  ********************************************************************/
+
 import Qt 4.7
 import Reversi 1.0
 import "UIConstants.js" as UI
@@ -41,6 +42,7 @@ Item {
             (gameEngine.curPlayer == Defs.Black && gameEngine.isBlackHuman))
 
 
+    property bool showPossibleMoves: false
 /*    onCurrentMoveChanged: {
         gameModel.updateMovePossibity();
     }*/
@@ -148,7 +150,7 @@ Item {
         id: infoBanner
         z: 2
         anchors.top: infoArea.top
-        anchors.topMargin: 12
+        anchors.topMargin: 10
         width: infoArea.width - 30 * 2
         anchors.horizontalCenter: infoArea.horizontalCenter
     }
@@ -189,7 +191,9 @@ Item {
             anchors.rightMargin: 10
             anchors.right: parent.right
             property int buttonWidth: width/3 - 4
+            height: undoButton.height
             Button {
+                id: undoButton
                 width:buttonsRow.buttonWidth
                 anchors.left: parent.left
                 text: qsTr("Undo")
@@ -228,6 +232,18 @@ Item {
                         checkMove();
                     }
                 }
+            }
+        }
+
+        CheckBox {
+            anchors.top: buttonsRow.bottom
+            anchors.topMargin: 10
+            anchors.left: parent.left
+            anchors.leftMargin: 10
+            text: qsTr("Show possible moves")
+            enabled: rootWindow.showPossibleMoves
+            onClicked: {
+                rootWindow.showPossibleMoves = !rootWindow.showPossibleMoves
             }
         }
 

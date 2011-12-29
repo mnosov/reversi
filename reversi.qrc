@@ -14,6 +14,7 @@
         <file>resources/bw10.png</file>
         <file>resources/bw11.png</file>
         <file>resources/bw12.png</file>
+        <file>resources/check.png</file>
         <file>qml/UIConstants.js</file>
         <file>qml/main.qml</file>
         <file>qml/Chip.qml</file>
@@ -22,5 +23,6 @@
         <file>qml/PlayerInfoArea.qml</file>
         <file>qml/SelectionDialog.qml</file>
         <file>qml/InfoBanner.qml</file>
+        <file>qml/CheckBox.qml</file>
     </qresource>
 </RCC>

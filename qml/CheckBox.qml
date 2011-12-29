@@ -24,8 +24,8 @@ import QtQuick 1.0
 
 Rectangle {
     id: root
-    width: 100
-    height: 50
+    width: checkbox.width + textBlock.width + 5*3
+    height: 40
     signal clicked
     property bool enabled: true
     property alias text: textBlock.text
@@ -36,26 +36,38 @@ Rectangle {
         GradientStop {position: 1.0; color: marea.pressed? "#ecdeac": "#ccb872"}
     }
 
+    Rectangle {
+        anchors.fill: parent
+        radius: 3
+        border.color: "black"
+        color: "gray"
+        opacity: 0.5
+        visible: root.enabled
+    }
+
+    Image {
+        id: checkbox
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.verticalCenterOffset: marea.pressed? -1: 0
+        anchors.left: parent.left
+        anchors.leftMargin: 5
+        source: "qrc:/resources/check.png"
+    }
     Text {
         id: textBlock
-        anchors.centerIn: parent
-        width: parent.width - 10
-        wrapMode: Text.WordWrap
-        verticalAlignment: Text.AlignVCenter
-        horizontalAlignment: Text.AlignHCenter
+        anchors.verticalCenter: parent.verticalCenter
+        anchors.left: checkbox.right
+        anchors.leftMargin: 5
         anchors.verticalCenterOffset: marea.pressed? -1: 0
         font.pixelSize: 18
-        color: root.enabled? (marea.pressed? "#404040": "black"): "#404040"
+        color: marea.pressed? "#404040": "black"
     }
 
     MouseArea {
         id: marea
         anchors.fill: parent
-        enabled: root.enabled
         onClicked: {
-            if (root.enabled) {
-                root.clicked();
-            }
+            root.clicked();
         }
     }
 }
