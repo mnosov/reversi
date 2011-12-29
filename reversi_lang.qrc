@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>i18n/reversi.qm</file>
+    </qresource>
+    <qresource prefix="/" lang="ru">
+        <file alias="i18n/reversi.qm">i18n/reversi_ru.qm</file>
+    </qresource>
+</RCC>

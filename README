@@ -1,1 +1,2 @@
-This is readme file
+This game "Reversi on QML" is based on open source game KReversi for KDE. Code related to "engine" of the game is taken from KReversi with small modifications.
+Graphics of the board and chips are also taken from KReversi for KDE

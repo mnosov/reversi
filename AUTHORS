@@ -1,0 +1,9 @@
+KREVERSI - base application
+===========================
+Mario Weilguni <mweilguni@sime.com>	Initial coding
+Inge Wallin <inge@lysator.liu.se>	Cleanups, lots of enhancements
+Dmitry Suzdalev <dimsuz@gmail.com>      Rewrite to use QGraphicsView
+
+QML REVERSI
+===========
+Michael Nosov <Michael.Nosov@gmail.com>	Adapting KREVERSI for Symbian^3 mobile devices. UI is implemented on QML 
