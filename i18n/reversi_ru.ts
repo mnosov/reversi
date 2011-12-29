@@ -21,7 +21,7 @@
     <message>
         <location filename="../qml/main.qml" line="221"/>
         <source>Setup</source>
-        <translation>Установить позицию</translation>
+        <translation>Задать позицию</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="256"/>
@@ -41,7 +41,7 @@
     <message>
         <location filename="../qml/main.qml" line="221"/>
         <source>Setup_short</source>
-        <translation>Устан. позицию</translation>
+        <translation>Задать позицию</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="243"/>
