@@ -1,0 +1,13 @@
+moc_*.cpp
+*.bak
+*.loc
+*.rss
+*.mmp
+*.pkg
+qrc_*.cpp
+*.inf
+Makefile
+*~
+.make.cache
+*.qm
+*.pro.user
