@@ -34,7 +34,7 @@ Item {
         anchors.horizontalCenter: parent.horizontalCenter
         text: rootWindow.getShortStringForSkill(playerCountInfo.color == Defs.White? gameEngine.isWhiteHuman: gameEngine.isBlackHuman,
                                                 playerCountInfo.color == Defs.White? gameEngine.whiteSkill: gameEngine.blackSkill)
-        font.pixelSize: 20
+        font.pixelSize: 19
         color: marea.pressed? "grey": "white"
     }
     Rectangle {

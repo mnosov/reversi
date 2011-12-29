@@ -53,7 +53,8 @@ OTHER_FILES += \
     qml/Dialog.qml \
     qml/SelectionDialog.qml \
     qml/Button.qml \
-    qml/PlayerInfoArea.qml
+    qml/PlayerInfoArea.qml \
+    qml/InfoBanner.qml
 
 RESOURCES += reversi.qrc
 RESOURCES += reversi_lang.qrc
@@ -68,6 +69,7 @@ system(lrelease $$TRANSLATIONS)
 # Please do not modify the following two lines. Required for deployment.
 include(qmlapplicationviewer/qmlapplicationviewer.pri)
 qtcAddDeployment()
+
 
 
 

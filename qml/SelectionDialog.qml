@@ -68,7 +68,7 @@ Dialog {
                     id: txt
                     anchors.centerIn: parent
                     text: model.data
-                    font.pixelSize: 28
+                    font.pixelSize: 26
                     color: {
                         if (selectedIndex == index) {
                             return "blue"

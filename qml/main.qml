@@ -144,6 +144,15 @@ Item {
         }
     }
 
+    InfoBanner {
+        id: infoBanner
+        z: 2
+        anchors.top: infoArea.top
+        anchors.topMargin: 12
+        width: infoArea.width - 30 * 2
+        anchors.horizontalCenter: infoArea.horizontalCenter
+    }
+
     Item {
         id: infoArea
         anchors.top: inPortrait? chipGrid.bottom: parent.top
@@ -314,6 +323,12 @@ Item {
             console.log("Check move - human: " + gameEngine.curPlayer);
             if (!gameEngine.isAnyMovePossible(gameEngine.curPlayer)) {
                 gameEngine.curPlayer = gameEngine.opponentColor(gameEngine.curPlayer);
+                if (gameEngine.curPlayer == Defs.White) {
+                    infoBanner.show(qsTr("Black can't move. White will move once again"));
+                } else {
+                    infoBanner.show(qsTr("White can't move. Black will move once again"));
+                }
+
                 gameModel.updateMovePossibity();
                 if (!rootWindow.humanMove) {
                     gameEngine.makeComputerMove();
@@ -324,6 +339,11 @@ Item {
             var success = gameEngine.makeComputerMove();
             if (!success) {
                 gameEngine.curPlayer = gameEngine.opponentColor(gameEngine.curPlayer);
+                if (gameEngine.curPlayer == Defs.White) {
+                    infoBanner.show(qsTr("Black can't move. White will move once again"));
+                } else {
+                    infoBanner.show(qsTr("White can't move. Black will move once again"));
+                }
                 gameModel.updateMovePossibity();
                 if (!rootWindow.humanMove) {
                     gameEngine.makeComputerMove();

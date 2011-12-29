@@ -21,5 +21,6 @@
         <file>qml/Button.qml</file>
         <file>qml/PlayerInfoArea.qml</file>
         <file>qml/SelectionDialog.qml</file>
+        <file>qml/InfoBanner.qml</file>
     </qresource>
 </RCC>
