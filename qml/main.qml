@@ -43,6 +43,8 @@ Item {
 
 
     property bool showPossibleMoves: false
+
+    property bool isLastGameClear: true //this means that you didn't change level, moved back, or setup position during the game
 /*    onCurrentMoveChanged: {
         gameModel.updateMovePossibity();
     }*/
@@ -117,7 +119,7 @@ Item {
             property bool isChipWhite: isWhite
             property bool isChipBlack: isBlack
             curColor: {
-                console.log("Getcur color: " + Defs.White + " " +   Defs.Black + " " + Defs.NoColor);
+                //console.log("Getcur color: " + Defs.White + " " +   Defs.Black + " " + Defs.NoColor);
                 return isChipWhite? Defs.White: (isChipBlack? Defs.Black: Defs.NoColor)
             }
             onIsChipWhiteChanged: {
@@ -203,6 +205,7 @@ Item {
                         undoTimer.lastUndo = false;
                         undoing = true;
                         undoTimer.lastUndo = !gameEngine.undo();
+                        isLastGameClear = false; //if player wins with "undo" - it is not a clear victory
                     }
                 }
             }
@@ -213,6 +216,7 @@ Item {
                 enabled: !gameEngine.setupMode
                 onClicked: {
                     gameEngine.restartGame();
+                    isLastGameClear = true;
                     checkMove();
                 }
             }
@@ -229,7 +233,15 @@ Item {
                         gameEngine.setupMode = false;
                         gameEngine.clearUndoStack();
                         gameModel.updateMovePossibity();
-                        checkMove();
+                        if (gameEngine.isInitialPosition()) {
+                            isLastGameClear = true;
+                        } else {
+                            isLastGameClear = false; //if player wins after setup position - it is not a clear victory
+                        }
+
+                        if (!gameEngine.isGameOver()) {
+                            checkMove();
+                        }
                     }
                 }
             }
@@ -292,6 +304,7 @@ Item {
         }
 
         onAccepted: {
+            isLastGameClear = gameEngine.isInitialPosition(); //if player changes skill during play - it is not clear victory
             if (destColor == Defs.White) {
                 if (selectedIndex == 0) {
                     gameEngine.isWhiteHuman = true;
@@ -308,10 +321,16 @@ Item {
                 }
             }
             //TODO: pause active thinking
-            checkMove();
+            if (!gameEngine.isGameOver()) {
+                checkMove();
+            }
         }
     }
 
+    WinScreen {
+        id: winScreen
+        anchors.fill: parent
+    }
 
     Connections {
         target: gameEngine
@@ -333,6 +352,8 @@ Item {
         }
         if (gameEngine.isGameOver()) {
             console.log("Game over");
+            infoBanner.hide();
+            winScreen.activate(isLastGameClear);
             return;
         }
         if (rootWindow.humanMove) {

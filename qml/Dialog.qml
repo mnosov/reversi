@@ -41,6 +41,8 @@ Item {
 
     signal accepted
     signal rejected
+    signal fullyActive
+    signal fullyClosed
 
     function accept() {
         hide();
@@ -67,6 +69,13 @@ Item {
 
         Behavior on scale {
             NumberAnimation { duration: rootDialog.animDuration }
+        }
+        onOpacityChanged: {
+            if (opacity == 1.0) {
+                rootDialog.fullyActive();
+            } else if (opacity == 0.0) {
+                rootDialog.fullyClosed();
+            }
         }
 
         Rectangle {

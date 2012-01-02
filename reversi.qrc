@@ -24,5 +24,6 @@
         <file>qml/SelectionDialog.qml</file>
         <file>qml/InfoBanner.qml</file>
         <file>qml/CheckBox.qml</file>
+        <file>qml/WinScreen.qml</file>
     </qresource>
 </RCC>

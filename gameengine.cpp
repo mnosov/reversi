@@ -98,6 +98,25 @@ void GameEngine::restartGame()
 //    m_score[White] = m_score[Black] = 2;
 }
 
+bool GameEngine::isInitialPosition() {
+    int correctCells = 4;
+    if (m_cells[3][3] != Defs::White ||
+            m_cells[4][4] != Defs::White ||
+            m_cells[4][3] != Defs::Black ||
+            m_cells[3][4] != Defs::Black) {
+        return false;
+    }
+    int r=0;
+    int c=0;
+    for(r=0; r<8; ++r)
+        for(c=0; c<8; ++c)
+            if (m_cells[r][c] == Defs::NoColor) {
+                correctCells++;
+            }
+
+    return correctCells == 64;
+}
+
 int GameEngine::playerScore( Defs::ChipColor player ) const
 {
     return m_score[player];
