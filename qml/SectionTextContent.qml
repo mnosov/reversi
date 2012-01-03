@@ -22,40 +22,15 @@
  ********************************************************************/
 import QtQuick 1.0
 
-Rectangle {
-    id: root
-    width: 100
-    height: 50
-    signal clicked(int mouseX, int mouseY)
-    property bool enabled: true
-    property alias text: textBlock.text
-    radius: 3
-    border.color: "black"
-    gradient: Gradient {
-        GradientStop {position: 0.0; color: marea.pressed? "#ccb872": "#ecdeac"}
-        GradientStop {position: 1.0; color: marea.pressed? "#ecdeac": "#ccb872"}
-    }
-
-    Text {
-        id: textBlock
-        anchors.centerIn: parent
-        width: parent.width - 10
-        wrapMode: Text.WordWrap
-        verticalAlignment: Text.AlignVCenter
-        horizontalAlignment: Text.AlignHCenter
-        anchors.verticalCenterOffset: marea.pressed? -1: 0
-        font.pixelSize: 18
-        color: root.enabled? (marea.pressed? "#404040": "black"): "#404040"
-    }
-
-    MouseArea {
-        id: marea
-        anchors.fill: parent
-        enabled: root.enabled
-        onClicked: {
-            if (root.enabled) {
-                root.clicked(marea.mouseX, marea.mouseY);
-            }
-        }
+Text {
+    id: contentText
+    width: parent.width
+    wrapMode: Text.WordWrap
+    textFormat: Text.RichText
+    font.pixelSize: 20
+    color: "white"
+    onLinkActivated: {
+        console.log("Link clicked:"+ link);
+        Qt.openUrlExternally(link);
     }
 }

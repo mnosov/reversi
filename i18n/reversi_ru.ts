@@ -2,6 +2,54 @@
 <!DOCTYPE TS>
 <TS version="2.0" language="ru_RU">
 <context>
+    <name>AboutScreen</name>
+    <message>
+        <location filename="../qml/AboutScreen.qml" line="57"/>
+        <source>Reversi</source>
+        <translation>Реверси</translation>
+    </message>
+    <message>
+        <location filename="../qml/AboutScreen.qml" line="64"/>
+        <source>Version %1</source>
+        <translation>Версия %1</translation>
+    </message>
+    <message>
+        <location filename="../qml/AboutScreen.qml" line="69"/>
+        <source>Back</source>
+        <translation>Назад</translation>
+    </message>
+    <message>
+        <location filename="../qml/AboutScreen.qml" line="104"/>
+        <source>Game description and rules</source>
+        <translation>Описание и правила игры</translation>
+    </message>
+    <message>
+        <location filename="../qml/AboutScreen.qml" line="105"/>
+        <source>A Reversi (or sometimes called Othello) game is a simple game between two players on 8x8 board. If a player&apos;s piece is captured by an opposing player, that piece is turned over to reveal the color of that player. A winner is declared when one player has more pieces of his own color on the board and there are no more possible moves.</source>
+        <translation>Реверси (другое название - Отелло) - настольная игра для двух человек на доске 8x8 клеток. Делая ход, игрок должен поставить свою фишку на одну из клеток доски таким образом, чтобы между этой поставленной фишкой и одной из имеющихся уже на доске фишек его цвета находился непрерывный ряд фишек соперника, горизонтальный, вертикальный или диагональный (другими словами, чтобы непрерывный ряд фишек соперника оказался «закрыт» фишками игрока с двух сторон). Все фишки соперника, входящие в «закрытый» на этом ходу ряд, переворачиваются на другую сторону (меняют цвет) и переходят к ходившему игроку. Выигрывает тот игрок, у которого больше фишек по окончании игры, т.е. более нет возможных ходов.</translation>
+    </message>
+    <message>
+        <location filename="../qml/AboutScreen.qml" line="108"/>
+        <source>Authors</source>
+        <translation>Авторы</translation>
+    </message>
+    <message>
+        <location filename="../qml/AboutScreen.qml" line="113"/>
+        <source>This open source game is based on open source game KReversi for KDE &lt;a href=&quot;http://games.kde.org/kreversi&quot;&gt;http://games.kde.org/kreversi&lt;/a&gt;&lt;br&gt;Source code and license details of this application is available on GitHub &lt;a href=&quot;https://github.com/mnosov/reversi&quot;&gt;https://github.com/mnosov/reversi&lt;/a&gt;</source>
+        <translation>Эта игра с открытым исходным кодом основана на игре KReversi для платформы KDE  &lt;a href=&quot;http://games.kde.org/kreversi&quot;&gt;http://games.kde.org/kreversi&lt;/a&gt;&lt;br&gt;Исходный код и описание лицензии для приложения доступны на GitHub &lt;a href=&quot;https://github.com/mnosov/reversi&quot;&gt;https://github.com/mnosov/reversi&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <location filename="../qml/AboutScreen.qml" line="116"/>
+        <source>Michael Nosov is an author of this application for Symbian^3 mobile devices. For bug reporting use this email &amp;lt;Michael.Nosov@gmail.com&amp;gt;</source>
+        <translation>Михаил Носов является автором этого приложения для мобильных устройств под управлением Symbian^3. Для сообщения об ошибках используйте email &amp;lt;Michael.Nosov@gmail.com&amp;gt;</translation>
+    </message>
+    <message>
+        <location filename="../qml/AboutScreen.qml" line="119"/>
+        <source>For information about authors of original KReversi application for KDE4 please refer to application&apos;s source code on &lt;a href=&quot;https://github.com/mnosov/reversi&quot;&gt;GitHub&lt;/a&gt; or &lt;a href=&quot;http://games.kde.org/kreversi&quot;&gt;The KDE Games Center&lt;/a&gt;</source>
+        <translation>Дополнительную информацию об авторах оригинального приложения KReversi для KDE4 можно получить из исходного кода на &lt;a href=&quot;https://github.com/mnosov/reversi&quot;&gt;GitHub&lt;/a&gt; или &lt;a href=&quot;http://games.kde.org/kreversi&quot;&gt;The KDE Games Center&lt;/a&gt;</translation>
+    </message>
+</context>
+<context>
     <name>WinScreen</name>
     <message>
         <location filename="../qml/WinScreen.qml" line="71"/>
@@ -85,17 +133,17 @@
         <translation>Задать позицию</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="268"/>
+        <location filename="../qml/main.qml" line="269"/>
         <source>Exit</source>
-        <translation>Выйти</translation>
+        <translation>Выход</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="415"/>
+        <location filename="../qml/main.qml" line="432"/>
         <source>Human</source>
         <translation>Игрок</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="396"/>
+        <location filename="../qml/main.qml" line="413"/>
         <source>Computer - Elementary</source>
         <translation>Компьютер - очень лёгкий</translation>
     </message>
@@ -110,90 +158,95 @@
         <translation>Показать возможные ходы</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="364"/>
-        <location filename="../qml/main.qml" line="380"/>
+        <location filename="../qml/main.qml" line="279"/>
+        <source>About</source>
+        <translation>О программе</translation>
+    </message>
+    <message>
+        <location filename="../qml/main.qml" line="381"/>
+        <location filename="../qml/main.qml" line="397"/>
         <source>Black can&apos;t move. White will move once again</source>
         <translation>Чёрные не могут сходить и пропускают ход. Белые ходят ещё раз</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="366"/>
-        <location filename="../qml/main.qml" line="382"/>
+        <location filename="../qml/main.qml" line="383"/>
+        <location filename="../qml/main.qml" line="399"/>
         <source>White can&apos;t move. Black will move once again</source>
         <translation>Белые не могут сходить и пропускают ход. Чёрные ходят ещё раз</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="394"/>
+        <location filename="../qml/main.qml" line="411"/>
         <source>Human_long</source>
         <translation>Игрок</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="398"/>
+        <location filename="../qml/main.qml" line="415"/>
         <source>Computer - Easy</source>
         <translation>Компьютер - лёгкий</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="400"/>
+        <location filename="../qml/main.qml" line="417"/>
         <source>Computer - Medium</source>
         <translation>Компьютер - средний</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="402"/>
+        <location filename="../qml/main.qml" line="419"/>
         <source>Computer - Difficult</source>
         <translation>Компьютер - трудный</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="404"/>
+        <location filename="../qml/main.qml" line="421"/>
         <source>Computer - Hard</source>
         <translation>Компьютер - сложный</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="406"/>
+        <location filename="../qml/main.qml" line="423"/>
         <source>Computer - Very hard</source>
         <translation>Компьютер - очень сложный</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="408"/>
+        <location filename="../qml/main.qml" line="425"/>
         <source>Computer - Impossible</source>
         <translation>Компьютер - невозможный</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="410"/>
-        <location filename="../qml/main.qml" line="431"/>
+        <location filename="../qml/main.qml" line="427"/>
+        <location filename="../qml/main.qml" line="448"/>
         <source>Skill %1</source>
         <translation>Уровень %1</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="417"/>
+        <location filename="../qml/main.qml" line="434"/>
         <source>Elementary</source>
         <translation>Очень лёгкий</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="419"/>
+        <location filename="../qml/main.qml" line="436"/>
         <source>Easy</source>
-        <translation>Легкий</translation>
+        <translation>Лёгкий</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="421"/>
+        <location filename="../qml/main.qml" line="438"/>
         <source>Medium</source>
         <translation>Средний</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="423"/>
+        <location filename="../qml/main.qml" line="440"/>
         <source>Difficult</source>
         <translation>Трудный</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="425"/>
+        <location filename="../qml/main.qml" line="442"/>
         <source>Hard</source>
         <translation>Сложный</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="427"/>
+        <location filename="../qml/main.qml" line="444"/>
         <source>Very hard</source>
         <translation>Очень сложный</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="429"/>
+        <location filename="../qml/main.qml" line="446"/>
         <source>Impossible</source>
         <translation>Невозможный</translation>
     </message>

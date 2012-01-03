@@ -2,6 +2,54 @@
 <!DOCTYPE TS>
 <TS version="2.0" language="en">
 <context>
+    <name>AboutScreen</name>
+    <message>
+        <location filename="../qml/AboutScreen.qml" line="57"/>
+        <source>Reversi</source>
+        <translation>Reversi</translation>
+    </message>
+    <message>
+        <location filename="../qml/AboutScreen.qml" line="64"/>
+        <source>Version %1</source>
+        <translation>Version %1</translation>
+    </message>
+    <message>
+        <location filename="../qml/AboutScreen.qml" line="69"/>
+        <source>Back</source>
+        <translation>Back</translation>
+    </message>
+    <message>
+        <location filename="../qml/AboutScreen.qml" line="104"/>
+        <source>Game description and rules</source>
+        <translation>Game description and rules</translation>
+    </message>
+    <message>
+        <location filename="../qml/AboutScreen.qml" line="105"/>
+        <source>A Reversi (or sometimes called Othello) game is a simple game between two players on 8x8 board. If a player&apos;s piece is captured by an opposing player, that piece is turned over to reveal the color of that player. A winner is declared when one player has more pieces of his own color on the board and there are no more possible moves.</source>
+        <translation>A Reversi (or sometimes called Othello) game is a simple game between two players on 8x8 board. If a player&apos;s piece is captured by an opposing player, that piece is turned over to reveal the color of that player. A winner is declared when one player has more pieces of his own color on the board and there are no more possible moves.</translation>
+    </message>
+    <message>
+        <location filename="../qml/AboutScreen.qml" line="108"/>
+        <source>Authors</source>
+        <translation>Authors</translation>
+    </message>
+    <message>
+        <location filename="../qml/AboutScreen.qml" line="113"/>
+        <source>This open source game is based on open source game KReversi for KDE &lt;a href=&quot;http://games.kde.org/kreversi&quot;&gt;http://games.kde.org/kreversi&lt;/a&gt;&lt;br&gt;Source code and license details of this application is available on GitHub &lt;a href=&quot;https://github.com/mnosov/reversi&quot;&gt;https://github.com/mnosov/reversi&lt;/a&gt;</source>
+        <translation>This open source game is based on open source game KReversi for KDE &lt;a href=&quot;http://games.kde.org/kreversi&quot;&gt;http://games.kde.org/kreversi&lt;/a&gt;&lt;br&gt;Source code and license details of this application is available on GitHub &lt;a href=&quot;https://github.com/mnosov/reversi&quot;&gt;https://github.com/mnosov/reversi&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <location filename="../qml/AboutScreen.qml" line="116"/>
+        <source>Michael Nosov is an author of this application for Symbian^3 mobile devices. For bug reporting use this email &amp;lt;Michael.Nosov@gmail.com&amp;gt;</source>
+        <translation>Michael Nosov is an author of this application for Symbian^3 mobile devices. For bug reporting use this email &amp;lt;Michael.Nosov@gmail.com&amp;gt;</translation>
+    </message>
+    <message>
+        <location filename="../qml/AboutScreen.qml" line="119"/>
+        <source>For information about authors of original KReversi application for KDE4 please refer to application&apos;s source code on &lt;a href=&quot;https://github.com/mnosov/reversi&quot;&gt;GitHub&lt;/a&gt; or &lt;a href=&quot;http://games.kde.org/kreversi&quot;&gt;The KDE Games Center&lt;/a&gt;</source>
+        <translation>For information about authors of original KReversi application for KDE4 please refer to application&apos;s source code on &lt;a href=&quot;https://github.com/mnosov/reversi&quot;&gt;GitHub&lt;/a&gt; or &lt;a href=&quot;http://games.kde.org/kreversi&quot;&gt;The KDE Games Center&lt;/a&gt;</translation>
+    </message>
+</context>
+<context>
     <name>WinScreen</name>
     <message>
         <location filename="../qml/WinScreen.qml" line="71"/>
@@ -85,17 +133,17 @@
         <translation>Setup</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="268"/>
+        <location filename="../qml/main.qml" line="269"/>
         <source>Exit</source>
         <translation>Exit</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="415"/>
+        <location filename="../qml/main.qml" line="432"/>
         <source>Human</source>
         <translation>Human</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="396"/>
+        <location filename="../qml/main.qml" line="413"/>
         <source>Computer - Elementary</source>
         <translation>Computer - Elementary</translation>
     </message>
@@ -110,90 +158,95 @@
         <translation>Show possible moves</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="364"/>
-        <location filename="../qml/main.qml" line="380"/>
+        <location filename="../qml/main.qml" line="279"/>
+        <source>About</source>
+        <translation>About</translation>
+    </message>
+    <message>
+        <location filename="../qml/main.qml" line="381"/>
+        <location filename="../qml/main.qml" line="397"/>
         <source>Black can&apos;t move. White will move once again</source>
         <translation>Black can&apos;t move. White will move once again</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="366"/>
-        <location filename="../qml/main.qml" line="382"/>
+        <location filename="../qml/main.qml" line="383"/>
+        <location filename="../qml/main.qml" line="399"/>
         <source>White can&apos;t move. Black will move once again</source>
         <translation>White can&apos;t move. Black will move once again</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="394"/>
+        <location filename="../qml/main.qml" line="411"/>
         <source>Human_long</source>
         <translation>Human</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="398"/>
+        <location filename="../qml/main.qml" line="415"/>
         <source>Computer - Easy</source>
         <translation>Computer - Easy</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="400"/>
+        <location filename="../qml/main.qml" line="417"/>
         <source>Computer - Medium</source>
         <translation>Computer - Medium</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="402"/>
+        <location filename="../qml/main.qml" line="419"/>
         <source>Computer - Difficult</source>
         <translation>Computer - Difficult</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="404"/>
+        <location filename="../qml/main.qml" line="421"/>
         <source>Computer - Hard</source>
         <translation>Computer - Hard</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="406"/>
+        <location filename="../qml/main.qml" line="423"/>
         <source>Computer - Very hard</source>
         <translation>Computer - Very hard</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="408"/>
+        <location filename="../qml/main.qml" line="425"/>
         <source>Computer - Impossible</source>
         <translation>Computer - Impossible</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="410"/>
-        <location filename="../qml/main.qml" line="431"/>
+        <location filename="../qml/main.qml" line="427"/>
+        <location filename="../qml/main.qml" line="448"/>
         <source>Skill %1</source>
         <translation>Skill %1</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="417"/>
+        <location filename="../qml/main.qml" line="434"/>
         <source>Elementary</source>
         <translation>Elementary</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="419"/>
+        <location filename="../qml/main.qml" line="436"/>
         <source>Easy</source>
         <translation>Easy</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="421"/>
+        <location filename="../qml/main.qml" line="438"/>
         <source>Medium</source>
         <translation>Medium</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="423"/>
+        <location filename="../qml/main.qml" line="440"/>
         <source>Difficult</source>
         <translation>Difficult</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="425"/>
+        <location filename="../qml/main.qml" line="442"/>
         <source>Hard</source>
         <translation>Hard</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="427"/>
+        <location filename="../qml/main.qml" line="444"/>
         <source>Very hard</source>
         <translation>Very hard</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="429"/>
+        <location filename="../qml/main.qml" line="446"/>
         <source>Impossible</source>
         <translation>Impossible</translation>
     </message>

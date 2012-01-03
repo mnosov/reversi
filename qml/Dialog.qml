@@ -27,6 +27,7 @@ Item {
     id: rootDialog
 
     property alias content: contentItem.children
+    property bool rejectOnOutsideClick: true
 
     function show(posX, posY) {
         console.log("show dialog: " + posX + " " + posY);
@@ -88,8 +89,10 @@ Item {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-                console.log("Pressed outside - reject dialog");
-                rootDialog.reject();
+                if (rootDialog.rejectOnOutsideClick) {
+                    console.log("Pressed outside - reject dialog");
+                    rootDialog.reject();
+                }
             }
         }
 

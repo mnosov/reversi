@@ -15,6 +15,7 @@
         <file>resources/bw11.png</file>
         <file>resources/bw12.png</file>
         <file>resources/check.png</file>
+        <file>resources/reversi.png</file>
         <file>qml/UIConstants.js</file>
         <file>qml/main.qml</file>
         <file>qml/Chip.qml</file>
@@ -25,5 +26,9 @@
         <file>qml/InfoBanner.qml</file>
         <file>qml/CheckBox.qml</file>
         <file>qml/WinScreen.qml</file>
+        <file>qml/AboutScreen.qml</file>
+        <file>qml/AboutSection.qml</file>
+        <file>qml/AboutSectionText.qml</file>
+        <file>qml/SectionTextContent.qml</file>
     </qresource>
 </RCC>

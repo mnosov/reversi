@@ -1,9 +1,17 @@
-KREVERSI - base application
-===========================
-Mario Weilguni <mweilguni@sime.com>	Initial coding
-Inge Wallin <inge@lysator.liu.se>	Cleanups, lots of enhancements
-Dmitry Suzdalev <dimsuz@gmail.com>      Rewrite to use QGraphicsView
-
 QML REVERSI
 ===========
-Michael Nosov <Michael.Nosov@gmail.com>	Adapting KREVERSI for Symbian^3 mobile devices. UI is implemented on QML 
+Michael Nosov <Michael.Nosov@gmail.com>  Adapting KREVERSI for Symbian^3 mobile devices. UI is implemented on QML
+
+KREVERSI - base KDE application
+===============================
+Mario Weilguni <mweilguni@sime.com>      Initial coding
+Inge Wallin <inge@lysator.liu.se>        Cleanups, lots of enhancements
+Dmitry Suzdalev <dimsuz@gmail.com>       Game rewrite for KDE4
+
+Thanks to (taken from description of original KDE4 KReversi game)
+=================================================================
+Mats Luthman                             Game engine, ported from his JAVA applet
+Simon Hürlimann                          Action refactoring
+Arne Klaassen                            Original raytraced chips
+Mauricio Piacentini                      Vector chips and background for KDE4
+Brian Croom <brian.s.croom@gmail.com>    Port rendering code to KGameRenderer

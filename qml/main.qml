@@ -262,12 +262,25 @@ Item {
         Button {
             anchors.bottom: parent.bottom
             anchors.bottomMargin: 15
-            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.left: parent.left
+            anchors.leftMargin: 12
             width: 100
-            height: 80
+            height: 60
             text: qsTr("Exit")
             onClicked: {
                 Qt.quit();
+            }
+        }
+        Button {
+            anchors.bottom: parent.bottom
+            anchors.bottomMargin: 15
+            anchors.right: parent.right
+            anchors.rightMargin: 12
+            text: qsTr("About")
+            width: 120
+            onClicked: {
+                var obj = mapToItem(aboutScreen, mouseX, mouseY);
+                aboutScreen.show(obj.x, obj.y);
             }
         }
     }
@@ -329,6 +342,11 @@ Item {
 
     WinScreen {
         id: winScreen
+        anchors.fill: parent
+    }
+
+    AboutScreen {
+        id: aboutScreen
         anchors.fill: parent
     }
 

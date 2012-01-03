@@ -22,40 +22,33 @@
  ********************************************************************/
 import QtQuick 1.0
 
-Rectangle {
+Column {
     id: root
-    width: 100
-    height: 50
-    signal clicked(int mouseX, int mouseY)
-    property bool enabled: true
-    property alias text: textBlock.text
-    radius: 3
-    border.color: "black"
-    gradient: Gradient {
-        GradientStop {position: 0.0; color: marea.pressed? "#ccb872": "#ecdeac"}
-        GradientStop {position: 1.0; color: marea.pressed? "#ecdeac": "#ccb872"}
-    }
-
+    property alias content: contentItem.children
+    property string title: ""
+    anchors.right: parent.right
+    anchors.left: parent.left
+    spacing: 3
     Text {
-        id: textBlock
-        anchors.centerIn: parent
-        width: parent.width - 10
+        id: sectionTitle
+        anchors.right: parent.right
+        anchors.left: parent.left
+        anchors.leftMargin: 12
+        anchors.rightMargin: 12
+        font.pixelSize: 23
+        font.bold: true
+        font.underline: true
         wrapMode: Text.WordWrap
-        verticalAlignment: Text.AlignVCenter
-        horizontalAlignment: Text.AlignHCenter
-        anchors.verticalCenterOffset: marea.pressed? -1: 0
-        font.pixelSize: 18
-        color: root.enabled? (marea.pressed? "#404040": "black"): "#404040"
+        visible: text != ""
+        text: root.title != ""? (root.title + ":"): ""
+        color: "white"
     }
-
-    MouseArea {
-        id: marea
-        anchors.fill: parent
-        enabled: root.enabled
-        onClicked: {
-            if (root.enabled) {
-                root.clicked(marea.mouseX, marea.mouseY);
-            }
-        }
+    Item {
+        id: contentItem
+        anchors.right: parent.right
+        anchors.left: parent.left
+        anchors.leftMargin: 12
+        anchors.rightMargin: 12
+        height: childrenRect.height
     }
 }

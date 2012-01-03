@@ -31,8 +31,8 @@ GameEngine::GameEngine(QDeclarativeContext *context, QObject* parent):
     QObject(parent),
     m_curPlayer(Defs::Black),
 //  m_playerColor(Black), m_computerColor( White ),
-    m_isWhiteHuman (true),
-    m_isBlackHuman (false),
+    m_isWhiteHuman (false),
+    m_isBlackHuman (true),
     m_model(0),
     m_context(context),
     m_setupMode(false),
@@ -60,7 +60,7 @@ void GameEngine::restartGame()
     if (getSetupMode()) {
         return;
     }
-    setCurPlayer(Defs::White);
+    setCurPlayer(Defs::Black);
 
     clearUndoStack();
     // reset board
@@ -624,4 +624,3 @@ void GameEngine::setChipColor(Defs::ChipColor color, int row, int col)
     //qDebug() << "Score of White player:" << m_score[White];
     //qDebug() << "Score of Black player:" << m_score[Black];
 }
-
