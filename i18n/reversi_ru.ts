@@ -18,7 +18,7 @@
         <location filename="../qml/WinScreen.qml" line="79"/>
         <location filename="../qml/WinScreen.qml" line="94"/>
         <source>Black wins</source>
-        <translation>Черные выиграли</translation>
+        <translation>Чёрные выиграли</translation>
     </message>
     <message>
         <location filename="../qml/WinScreen.qml" line="86"/>
@@ -29,7 +29,7 @@
     <message>
         <location filename="../qml/WinScreen.qml" line="122"/>
         <source>You won against opponent with Elementary level. Try to play with harder level.</source>
-        <translation>Вы победили соперника с Очень Лёгкий уровнем. Попробуйте сыграть с более сложными противниками.</translation>
+        <translation>Вы победили соперника с Очень Лёгким уровнем. Попробуйте сыграть с более сложными противниками.</translation>
     </message>
     <message>
         <location filename="../qml/WinScreen.qml" line="124"/>
@@ -97,7 +97,7 @@
     <message>
         <location filename="../qml/main.qml" line="396"/>
         <source>Computer - Elementary</source>
-        <translation>Компьютер - очень легкий</translation>
+        <translation>Компьютер - очень лёгкий</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="225"/>
@@ -129,7 +129,7 @@
     <message>
         <location filename="../qml/main.qml" line="398"/>
         <source>Computer - Easy</source>
-        <translation>Компьютер - легкий</translation>
+        <translation>Компьютер - лёгкий</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="400"/>
@@ -165,7 +165,7 @@
     <message>
         <location filename="../qml/main.qml" line="417"/>
         <source>Elementary</source>
-        <translation>Очень легкий</translation>
+        <translation>Очень лёгкий</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="419"/>

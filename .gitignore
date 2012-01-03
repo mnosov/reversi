@@ -11,3 +11,4 @@ Makefile
 .make.cache
 *.qm
 *.pro.user
+*.sis

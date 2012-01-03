@@ -212,7 +212,18 @@ bool GameEngine::makeComputerMove()
 
 bool GameEngine::canUndo()
 {
-    return !m_undoStack.isEmpty();
+    if (!m_isWhiteHuman && !m_isBlackHuman) {
+        return !m_undoStack.isEmpty();
+    }
+    foreach (const PosList& undo, m_undoStack) {
+        KReversiPos move = undo.first();
+        if ((move.color == Defs::White && m_isWhiteHuman ) ||
+                (move.color == Defs::Black && m_isBlackHuman )) {
+            return true;
+        }
+    }
+
+    return false;
 }
 
 void GameEngine::clearUndoStack()
