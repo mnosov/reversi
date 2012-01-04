@@ -151,6 +151,7 @@ public:
 
     Q_INVOKABLE int opponentColor(int color) const {return opponentColorFor((Defs::ChipColor)color);}
 
+    Q_INVOKABLE bool isComputerThinking() const {return m_thinkingInProgress;}
 signals:
     void computerMoved(int index);
     void whiteCountChanged();
@@ -235,6 +236,7 @@ private:
     bool m_setupMode;
     int m_whiteSkill;
     int m_blackSkill;
+    bool m_thinkingInProgress;
 };
 
 #endif //REVERSI_GAME_ENGINE_H

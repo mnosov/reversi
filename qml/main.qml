@@ -374,6 +374,10 @@ Item {
             winScreen.activate(isLastGameClear);
             return;
         }
+        if (gameEngine.isComputerThinking()) {
+            return; //avoid any messages or moves when computer is thinking
+        }
+
         if (rootWindow.humanMove) {
             console.log("Check move - human: " + gameEngine.curPlayer);
             if (!gameEngine.isAnyMovePossible(gameEngine.curPlayer)) {

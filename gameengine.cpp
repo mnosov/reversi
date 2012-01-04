@@ -37,7 +37,8 @@ GameEngine::GameEngine(QDeclarativeContext *context, QObject* parent):
     m_context(context),
     m_setupMode(false),
     m_whiteSkill(1),
-    m_blackSkill(1)
+    m_blackSkill(1),
+    m_thinkingInProgress(false)
 {
 
     restartGame();
@@ -193,7 +194,9 @@ bool GameEngine::makeComputerMove()
     } else {
         m_engine->setStrength(m_blackSkill);
     }
+    m_thinkingInProgress = true;
     KReversiPos move = m_engine->computeMove( *this, true );
+    m_thinkingInProgress = false;
     if( !move.isValid() )
         return false;
 
