@@ -91,6 +91,7 @@ void GameEngine::restartGame()
             }
         }
 
+    m_thinkingInProgress = false;
     emit whiteCountChanged();
     emit blackCountChanged();
     if (m_model) {
@@ -211,6 +212,13 @@ bool GameEngine::makeComputerMove()
     m_undoStack.push( m_changedChips );
     emit computerMoved (move.row*8+move.col);
     return true;
+}
+
+void GameEngine::interrupt()
+{
+    if (m_thinkingInProgress) {
+        m_engine->setInterrupt(true);
+    }
 }
 
 bool GameEngine::canUndo()

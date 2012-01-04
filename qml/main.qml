@@ -45,6 +45,7 @@ Item {
     property bool showPossibleMoves: false
 
     property bool isLastGameClear: true //this means that you didn't change level, moved back, or setup position during the game
+    property bool isPendingNew: false
 /*    onCurrentMoveChanged: {
         gameModel.updateMovePossibity();
     }*/
@@ -202,6 +203,7 @@ Item {
                 enabled: !gameEngine.setupMode
                 onClicked: {
                     if (gameEngine.canUndo()) {
+                        gameEngine.interrupt();
                         undoTimer.lastUndo = false;
                         undoing = true;
                         undoTimer.lastUndo = !gameEngine.undo();
@@ -215,9 +217,14 @@ Item {
                 anchors.horizontalCenter: parent.horizontalCenter
                 enabled: !gameEngine.setupMode
                 onClicked: {
-                    gameEngine.restartGame();
-                    isLastGameClear = true;
-                    checkMove();
+                    if (gameEngine.isComputerThinking()) {
+                        isPendingNew = true;
+                        gameEngine.interrupt();
+                    } else {
+                        gameEngine.restartGame();
+                        isLastGameClear = true;
+                        checkMove();
+                    }
                 }
             }
 
@@ -227,6 +234,7 @@ Item {
                 width:buttonsRow.buttonWidth
                 anchors.right: parent.right
                 onClicked: {
+                    gameEngine.interrupt();
                     if (!gameEngine.setupMode) {
                         gameEngine.setupMode = true;
                     } else {
@@ -268,6 +276,7 @@ Item {
             height: 60
             text: qsTr("Exit")
             onClicked: {
+                gameEngine.interrupt();
                 Qt.quit();
             }
         }
@@ -280,12 +289,14 @@ Item {
             width: 120
             onClicked: {
                 var obj = mapToItem(aboutScreen, mouseX, mouseY);
+                gameEngine.interrupt();
                 aboutScreen.show(obj.x, obj.y);
             }
         }
     }
 
     function showSelectionDialog(playerColor, startX, startY) {
+        gameEngine.interrupt();
         selectSkill.showFor(playerColor, startX, startY)
     }
 
@@ -338,6 +349,11 @@ Item {
                 checkMove();
             }
         }
+        onRejected: {
+            if (!gameEngine.isGameOver()) {
+                checkMove();
+            }
+        }
     }
 
     WinScreen {
@@ -348,6 +364,11 @@ Item {
     AboutScreen {
         id: aboutScreen
         anchors.fill: parent
+        onRejected: {
+            if (!gameEngine.isGameOver()) {
+                checkMove();
+            }
+        }
     }
 
     Connections {
@@ -375,6 +396,7 @@ Item {
             return;
         }
         if (gameEngine.isComputerThinking()) {
+            console.log("CheckMove - computer is currently thinking")
             return; //avoid any messages or moves when computer is thinking
         }
 
@@ -391,12 +413,25 @@ Item {
                 gameModel.updateMovePossibity();
                 if (!rootWindow.humanMove) {
                     gameEngine.makeComputerMove();
+                    if (isPendingNew) {
+                        isPendingNew = false;
+                        gameEngine.restartGame();
+                        isLastGameClear = true;
+                        checkMove();
+                    }
                 }
             }
         } else {
             console.log("Check move - computer");
             var success = gameEngine.makeComputerMove();
-            if (!success) {
+            if (isPendingNew) {
+                isPendingNew = false;
+                gameEngine.restartGame();
+                isLastGameClear = true;
+                checkMove();
+                return;
+            }
+            if (!success && !gameEngine.isAnyMovePossible(gameEngine.curPlayer)) {
                 gameEngine.curPlayer = gameEngine.opponentColor(gameEngine.curPlayer);
                 if (gameEngine.curPlayer == Defs.White) {
                     infoBanner.show(qsTr("Black can't move. White will move once again"));
@@ -406,6 +441,12 @@ Item {
                 gameModel.updateMovePossibity();
                 if (!rootWindow.humanMove) {
                     gameEngine.makeComputerMove();
+                    if (isPendingNew) {
+                        isPendingNew = false;
+                        gameEngine.restartGame();
+                        isLastGameClear = true;
+                        checkMove();
+                    }
                 }
             }
         }

@@ -152,6 +152,7 @@ public:
     Q_INVOKABLE int opponentColor(int color) const {return opponentColorFor((Defs::ChipColor)color);}
 
     Q_INVOKABLE bool isComputerThinking() const {return m_thinkingInProgress;}
+    Q_INVOKABLE void interrupt();
 signals:
     void computerMoved(int index);
     void whiteCountChanged();

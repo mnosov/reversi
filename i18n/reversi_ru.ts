@@ -26,7 +26,7 @@
     <message>
         <location filename="../qml/AboutScreen.qml" line="105"/>
         <source>A Reversi (or sometimes called Othello) game is a simple game between two players on 8x8 board. If a player&apos;s piece is captured by an opposing player, that piece is turned over to reveal the color of that player. A winner is declared when one player has more pieces of his own color on the board and there are no more possible moves.</source>
-        <translation>Реверси (другое название - Отелло) - настольная игра для двух человек на доске 8x8 клеток. Делая ход, игрок должен поставить свою фишку на одну из клеток доски таким образом, чтобы между этой поставленной фишкой и одной из имеющихся уже на доске фишек его цвета находился непрерывный ряд фишек соперника, горизонтальный, вертикальный или диагональный (другими словами, чтобы непрерывный ряд фишек соперника оказался «закрыт» фишками игрока с двух сторон). Все фишки соперника, входящие в «закрытый» на этом ходу ряд, переворачиваются на другую сторону (меняют цвет) и переходят к ходившему игроку. Выигрывает тот игрок, у которого больше фишек по окончании игры, т.е. более нет возможных ходов.</translation>
+        <translation>Реверси (другое название - Отелло) - настольная игра для двух игроков на доске 8x8 клеток. Делая ход, игрок должен поставить свою фишку на одну из клеток доски таким образом, чтобы между этой поставленной фишкой и одной из имеющихся уже на доске фишек его цвета находился непрерывный ряд фишек соперника, горизонтальный, вертикальный или диагональный (другими словами, чтобы непрерывный ряд фишек соперника оказался «закрыт» фишками игрока с двух сторон). Все фишки соперника, входящие в «закрытый» на этом ходу ряд, переворачиваются на другую сторону (меняют цвет) и переходят к ходившему игроку. Выигрывает тот игрок, у которого больше фишек по окончании игры, т.е. более нет возможных ходов.</translation>
     </message>
     <message>
         <location filename="../qml/AboutScreen.qml" line="108"/>
@@ -41,7 +41,7 @@
     <message>
         <location filename="../qml/AboutScreen.qml" line="116"/>
         <source>Michael Nosov is an author of this application for Symbian^3 mobile devices. For bug reporting use this email &amp;lt;Michael.Nosov@gmail.com&amp;gt;</source>
-        <translation>Михаил Носов является автором этого приложения для мобильных устройств под управлением Symbian^3. Для сообщения об ошибках используйте email &amp;lt;Michael.Nosov@gmail.com&amp;gt;</translation>
+        <translation>Михаил Носов является автором этого приложения для мобильных устройств под управлением ОС Symbian^3. Для сообщения об ошибках используйте email &amp;lt;Michael.Nosov@gmail.com&amp;gt;</translation>
     </message>
     <message>
         <location filename="../qml/AboutScreen.qml" line="119"/>
