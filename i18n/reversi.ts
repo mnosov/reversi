@@ -145,7 +145,7 @@
     <message>
         <location filename="../qml/main.qml" line="413"/>
         <source>Computer - Elementary</source>
-        <translation>Computer - Elementary</translation>
+        <translation>Elementary</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="225"/>
@@ -182,32 +182,32 @@
     <message>
         <location filename="../qml/main.qml" line="415"/>
         <source>Computer - Easy</source>
-        <translation>Computer - Easy</translation>
+        <translation>Easy</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="417"/>
         <source>Computer - Medium</source>
-        <translation>Computer - Medium</translation>
+        <translation>Medium</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="419"/>
         <source>Computer - Difficult</source>
-        <translation>Computer - Difficult</translation>
+        <translation>Difficult</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="421"/>
         <source>Computer - Hard</source>
-        <translation>Computer - Hard</translation>
+        <translation>Hard</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="423"/>
         <source>Computer - Very hard</source>
-        <translation>Computer - Very hard</translation>
+        <translation>Very hard</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="425"/>
         <source>Computer - Impossible</source>
-        <translation>Computer - Impossible</translation>
+        <translation>Impossible</translation>
     </message>
     <message>
         <location filename="../qml/main.qml" line="427"/>

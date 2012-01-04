@@ -8,7 +8,7 @@ TARGET = Reversi
 
 # Additional import path used to resolve QML modules in Creator's code model
 
-symbian:TARGET.UID3 = 0xA89FDCEC
+symbian:TARGET.UID3 = 0x2004b2fb #for development 0xA89FDCEC
 
 # Allow network access on Symbian
 # symbian:TARGET.CAPABILITY += NetworkServices
@@ -24,11 +24,17 @@ symbian:TARGET.UID3 = 0xA89FDCEC
 # MOBILITY +=
 
 symbian {
-    #UID should be requested by Publisher from OVI
-    packageheader = "$${LITERAL_HASH}{\"Reversi\"},(0xA89FDCEC),1,0,0"
+    #0xA89FDCEC for development
+    packageheader = "$${LITERAL_HASH}{\"Reversi\"},(0x2004b2fb),1,0,0"
     default_deployment.pkg_prerules += packageheader
 
-    DEPLOYMENT.installer_header = 0xA000D7CE
+    DEPLOYMENT.installer_header = 0x2002CCCF #for development 0xA000D7CE
+
+    my_deployment.pkg_prerules += vendorinfo
+
+    DEPLOYMENT += my_deployment
+
+    vendorinfo += "%{\"Michael.Nosov@gmail.com\"}" ":\"Michael.Nosov@gmail.com\""
 } else {
 }
 
@@ -37,12 +43,12 @@ INCLUDEPATH += .
 SOURCES += main.cpp \
            gameengine.cpp \
            Engine.cpp \
-    boardmodel.cpp
+           boardmodel.cpp
 
 HEADERS += commondefs.h \
            gameengine.h \
            Engine.h \
-    boardmodel.h
+           boardmodel.h
 
 OTHER_FILES += \
     i18n/reversi.ts \
