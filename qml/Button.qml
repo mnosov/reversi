@@ -45,7 +45,7 @@ Rectangle {
         verticalAlignment: Text.AlignVCenter
         horizontalAlignment: Text.AlignHCenter
         anchors.verticalCenterOffset: marea.pressed? -1: 0
-        font.pixelSize: 18*UI.PLATFORM_SCALE_FACTOR
+        font.pixelSize: 17*UI.PLATFORM_SCALE_FACTOR
         color: root.enabled? (marea.pressed? "#404040": "black"): "#404040"
     }
 

@@ -38,7 +38,7 @@ symbian {
     vendorinfo += "%{\"Michael.Nosov@gmail.com\"}" ":\"Michael.Nosov@gmail.com\""
 } else {
     # Speed up launching on MeeGo/Harmattan when using applauncherd daemon
-    CONFIG += qdeclarative-boostable
+#    CONFIG += qdeclarative-boostable
 }
 
 INCLUDEPATH += .
