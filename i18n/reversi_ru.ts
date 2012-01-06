@@ -41,7 +41,7 @@
     <message>
         <location filename="../qml/AboutScreen.qml" line="116"/>
         <source>Michael Nosov is an author of this application for Symbian^3 mobile devices. For bug reporting use this email &amp;lt;Michael.Nosov@gmail.com&amp;gt;</source>
-        <translation>Михаил Носов является автором этого приложения для мобильных устройств под управлением ОС Symbian^3. Для сообщения об ошибках используйте email &amp;lt;Michael.Nosov@gmail.com&amp;gt;</translation>
+        <translation>Михаил Носов является автором этого приложения для мобильных устройств под управлением ОС Symbian^3 и MeeGo. Для сообщения об ошибках используйте email &amp;lt;Michael.Nosov@gmail.com&amp;gt;</translation>
     </message>
     <message>
         <location filename="../qml/AboutScreen.qml" line="119"/>

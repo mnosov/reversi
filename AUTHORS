@@ -1,7 +1,7 @@
 QML REVERSI
 ===========
-Michael Nosov <Michael.Nosov@gmail.com>  Adapting KREVERSI for Symbian^3 mobile devices. UI is implemented on QML
-
+Michael Nosov <Michael.Nosov@gmail.com>  Adapting KREVERSI for Symbian^3 and MeeGo mobile devices. UI is implemented on QML
+ 
 KREVERSI - base KDE application
 ===============================
 Mario Weilguni <mweilguni@sime.com>      Initial coding
