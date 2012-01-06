@@ -21,6 +21,7 @@
  *
  ********************************************************************/
 import QtQuick 1.0
+import "UIConstants.js" as UI
 
 Dialog {
     id: rootDialog
@@ -35,41 +36,41 @@ Dialog {
         Item {
             id: dialogTitle
             anchors.top: parent.top
-            anchors.topMargin: 12
+            anchors.topMargin: 12*UI.PLATFORM_SCALE_FACTOR
             width: parent.width
             height: titleImage.height + separator.height
             Image {
                 id: titleImage
                 anchors.left: parent.left
-                anchors.leftMargin: 12
+                anchors.leftMargin: 12*UI.PLATFORM_SCALE_FACTOR
                 source: "qrc:/resources/reversi.png"
             }
             Column {
                 id: nameAndVersion
                 anchors.verticalCenter: titleImage.verticalCenter
                 anchors.left: titleImage.right
-                anchors.leftMargin: 12
-                spacing: 3
+                anchors.leftMargin: 12*UI.PLATFORM_SCALE_FACTOR
+                spacing: 3*UI.PLATFORM_SCALE_FACTOR
                 Text {
                     id: name
                     color: "white"
-                    font.pixelSize: 30
+                    font.pixelSize: 30*UI.PLATFORM_SCALE_FACTOR
                     text: qsTr("Reversi")
                 }
                 Text {
                     id: version
                     color: "white"
-                    font.pixelSize: 22
+                    font.pixelSize: 22*UI.PLATFORM_SCALE_FACTOR
                     font.bold: true
                     text: qsTr("Version %1").arg("1.0")
                 }
             }
             Button {
-                width: 100
+                width: 100*UI.PLATFORM_SCALE_FACTOR
                 text: qsTr("Back")
                 anchors.verticalCenter: titleImage.verticalCenter
                 anchors.right: parent.right
-                anchors.rightMargin: 12
+                anchors.rightMargin: 12*UI.PLATFORM_SCALE_FACTOR
                 onClicked: {
                     rootDialog.reject();
                 }
@@ -78,9 +79,9 @@ Dialog {
             Rectangle {
                 id: separator
                 anchors.left: parent.left
-                anchors.leftMargin: 6
+                anchors.leftMargin: 6*UI.PLATFORM_SCALE_FACTOR
                 anchors.right: parent.right
-                anchors.rightMargin: 6
+                anchors.rightMargin: 6*UI.PLATFORM_SCALE_FACTOR
                 anchors.bottom: parent.bottom
                 color: "black"
                 height: 1
@@ -94,12 +95,12 @@ Dialog {
             anchors.left: parent.left
             anchors.right: parent.right
             clip: true
-            contentHeight: aboutContent.height + 12
+            contentHeight: aboutContent.height + 12*UI.PLATFORM_SCALE_FACTOR
             Column {
                 id: aboutContent
                 anchors.left: parent.left
                 anchors.right: parent.right
-                spacing: 5
+                spacing: 5*UI.PLATFORM_SCALE_FACTOR
                 AboutSectionText {
                     title: qsTr("Game description and rules")
                     text: qsTr("A Reversi (or sometimes called Othello) game is a simple game between two players on 8x8 board. If a player's piece is captured by an opposing player, that piece is turned over to reveal the color of that player. A winner is declared when one player has more pieces of his own color on the board and there are no more possible moves.")
@@ -108,7 +109,7 @@ Dialog {
                     title: qsTr("Authors")
                     content: Column {
                         width: parent.width
-                        spacing: 5
+                        spacing: 5*UI.PLATFORM_SCALE_FACTOR
                         SectionTextContent {
                             text: qsTr("This open source game is based on open source game KReversi for KDE <a href=\"http://games.kde.org/kreversi\">http://games.kde.org/kreversi</a><br>Source code and license details of this application is available on GitHub <a href=\"https://github.com/mnosov/reversi\">https://github.com/mnosov/reversi</a>")
                         }

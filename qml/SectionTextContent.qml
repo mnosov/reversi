@@ -21,13 +21,14 @@
  *
  ********************************************************************/
 import QtQuick 1.0
+import "UIConstants.js" as UI
 
 Text {
     id: contentText
     width: parent.width
     wrapMode: Text.WordWrap
     textFormat: Text.RichText
-    font.pixelSize: 20
+    font.pixelSize: 20*UI.PLATFORM_SCALE_FACTOR
     color: "white"
     onLinkActivated: {
         console.log("Link clicked:"+ link);

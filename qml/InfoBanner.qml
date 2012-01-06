@@ -21,11 +21,12 @@
  *
  ********************************************************************/
 import QtQuick 1.0
+import "UIConstants.js" as UI
 
 Rectangle {
     id: banner
-    height: text.height + 24
-    radius: 7
+    height: text.height + 24*UI.PLATFORM_SCALE_FACTOR
+    radius: 7*UI.PLATFORM_SCALE_FACTOR
     color: "#E0000000"
     opacity: 0.0
     function show(txt) {
@@ -52,11 +53,10 @@ Rectangle {
         anchors.horizontalCenter: parent.horizontalCenter
         verticalAlignment: Text.AlignVCenter
         horizontalAlignment: Text.AlignHCenter
-        width: parent.width - 24
+        width: parent.width - 24*UI.PLATFORM_SCALE_FACTOR
         color: "white"
-        font.pixelSize: 19
+        font.pixelSize: 19*UI.PLATFORM_SCALE_FACTOR
         wrapMode: Text.WordWrap
-
     }
 
     Timer {

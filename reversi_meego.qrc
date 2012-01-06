@@ -1,0 +1,22 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="resources/background.png">resources_meego/background.png</file>
+        <file alias="resources/boardbig.png">resources_meego/boardbig.png</file>
+        <file alias="resources/bw1.png">resources_meego/bw1.png</file>
+        <file alias="resources/bw2.png">resources_meego/bw2.png</file>
+        <file alias="resources/bw3.png">resources_meego/bw3.png</file>
+        <file alias="resources/bw4.png">resources_meego/bw4.png</file>
+        <file alias="resources/bw5.png">resources_meego/bw5.png</file>
+        <file alias="resources/bw6.png">resources_meego/bw6.png</file>
+        <file alias="resources/bw7.png">resources_meego/bw7.png</file>
+        <file alias="resources/bw8.png">resources_meego/bw8.png</file>
+        <file alias="resources/bw9.png">resources_meego/bw9.png</file>
+        <file alias="resources/bw10.png">resources_meego/bw10.png</file>
+        <file alias="resources/bw11.png">resources_meego/bw11.png</file>
+        <file alias="resources/bw12.png">resources_meego/bw12.png</file>
+        <file alias="resources/check.png">resources_meego/check.png</file>
+	<file alias="resources/reversi.png">resources_meego/reversi.png</file>
+        <file alias="qml/UIConstants.js">qml/UIConstants_meego.js</file>
+        <file>qml/mainMeeGo.qml</file>
+    </qresource>
+</RCC>

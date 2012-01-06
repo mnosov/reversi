@@ -21,6 +21,7 @@
  *
  ********************************************************************/
 import QtQuick 1.0
+import "UIConstants.js" as UI
 
 Column {
     id: root
@@ -28,14 +29,14 @@ Column {
     property string title: ""
     anchors.right: parent.right
     anchors.left: parent.left
-    spacing: 3
+    spacing: 3*UI.PLATFORM_SCALE_FACTOR
     Text {
         id: sectionTitle
         anchors.right: parent.right
         anchors.left: parent.left
-        anchors.leftMargin: 12
-        anchors.rightMargin: 12
-        font.pixelSize: 23
+        anchors.leftMargin: 12*UI.PLATFORM_SCALE_FACTOR
+        anchors.rightMargin: 12*UI.PLATFORM_SCALE_FACTOR
+        font.pixelSize: 23*UI.PLATFORM_SCALE_FACTOR
         font.bold: true
         font.underline: true
         wrapMode: Text.WordWrap
@@ -47,8 +48,8 @@ Column {
         id: contentItem
         anchors.right: parent.right
         anchors.left: parent.left
-        anchors.leftMargin: 12
-        anchors.rightMargin: 12
+        anchors.leftMargin: 12*UI.PLATFORM_SCALE_FACTOR
+        anchors.rightMargin: 12*UI.PLATFORM_SCALE_FACTOR
         height: childrenRect.height
     }
 }

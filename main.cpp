@@ -24,13 +24,16 @@
 #include <QtGui/QApplication>
 #include <QTranslator>
 #include <QUrl>
+#include <QDebug>
 #include <QDeclarativeEngine>
 #include <QtDeclarative>
 #include "qmlapplicationviewer.h"
 #include "gameengine.h"
 
-int main(int argc, char *argv[])
+Q_DECL_EXPORT int main(int argc, char *argv[])
 {
+#if !defined(Q_OS_UNIX) || defined (Q_OS_SYMBIAN)
+    qDebug() << "Build for Symbian";
     QApplication app(argc, argv);
 
     QTranslator trans;
@@ -53,10 +56,42 @@ int main(int argc, char *argv[])
 
     ctxt->setContextProperty("gameEngine", &gameEng);
 
-    viewer.setSource(QUrl("qrc:qml/main.qml"));
+    viewer.setSource(QUrl("qrc:qml/MainScreenItem.qml"));
 
 
     viewer.showExpanded();
 
     return app.exec();
+#else
+    qDebug() << "Build for MeeGo";
+    QScopedPointer<QApplication> app(createApplication(argc, argv));
+    QScopedPointer<QmlApplicationViewer> viewer(QmlApplicationViewer::create());
+
+    QTranslator trans;
+    trans.load(":/i18n/reversi");
+    app->installTranslator(&trans);
+
+    viewer->setOrientation(QmlApplicationViewer::ScreenOrientationAuto);
+
+    QDeclarativeContext *ctxt = viewer->rootContext();
+    if (!ctxt)
+    {
+        return 0;
+    }
+
+    GameEngine gameEng (ctxt);
+
+    qmlRegisterUncreatableType<GameEngine>("Reversi", 1, 0, "GameEngine", "should not be created there");
+    qmlRegisterUncreatableType<Defs>("Reversi", 1, 0, "Defs", "should not be created there");
+
+    ctxt->setContextProperty("gameEngine", &gameEng);
+
+    qDebug() << "Context property gameEngine is set";
+    viewer->setSource(QUrl("qrc:qml/mainMeeGo.qml"));
+    //viewer->setMainQmlFile(QLatin1String("qml/reversi/mainMeeGo.qml"));
+
+    viewer->showExpanded();
+
+    return app->exec();
+#endif
 }

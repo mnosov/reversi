@@ -111,142 +111,142 @@
     </message>
 </context>
 <context>
-    <name>main</name>
+    <name>MainScreenItem</name>
     <message>
-        <location filename="../qml/main.qml" line="201"/>
+        <location filename="../qml/MainScreenItem.qml" line="201"/>
         <source>Undo</source>
         <translation>Отменить ход</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="213"/>
+        <location filename="../qml/MainScreenItem.qml" line="213"/>
         <source>New</source>
         <translation>Начать заново</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="225"/>
+        <location filename="../qml/MainScreenItem.qml" line="225"/>
         <source>Done</source>
         <translation>Готово</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="225"/>
+        <location filename="../qml/MainScreenItem.qml" line="225"/>
         <source>Setup</source>
         <translation>Задать позицию</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="269"/>
+        <location filename="../qml/MainScreenItem.qml" line="269"/>
         <source>Exit</source>
         <translation>Выход</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="432"/>
+        <location filename="../qml/MainScreenItem.qml" line="432"/>
         <source>Human</source>
         <translation>Игрок</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="413"/>
+        <location filename="../qml/MainScreenItem.qml" line="413"/>
         <source>Computer - Elementary</source>
         <translation>Очень лёгкий</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="225"/>
+        <location filename="../qml/MainScreenItem.qml" line="225"/>
         <source>Setup_short</source>
         <translation>Задать позицию</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="255"/>
+        <location filename="../qml/MainScreenItem.qml" line="255"/>
         <source>Show possible moves</source>
         <translation>Показать возможные ходы</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="279"/>
+        <location filename="../qml/MainScreenItem.qml" line="279"/>
         <source>About</source>
         <translation>О программе</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="381"/>
-        <location filename="../qml/main.qml" line="397"/>
+        <location filename="../qml/MainScreenItem.qml" line="381"/>
+        <location filename="../qml/MainScreenItem.qml" line="397"/>
         <source>Black can&apos;t move. White will move once again</source>
         <translation>Чёрные не могут сходить и пропускают ход. Белые ходят ещё раз</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="383"/>
-        <location filename="../qml/main.qml" line="399"/>
+        <location filename="../qml/MainScreenItem.qml" line="383"/>
+        <location filename="../qml/MainScreenItem.qml" line="399"/>
         <source>White can&apos;t move. Black will move once again</source>
         <translation>Белые не могут сходить и пропускают ход. Чёрные ходят ещё раз</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="411"/>
+        <location filename="../qml/MainScreenItem.qml" line="411"/>
         <source>Human_long</source>
         <translation>Игрок</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="415"/>
+        <location filename="../qml/MainScreenItem.qml" line="415"/>
         <source>Computer - Easy</source>
         <translation>Лёгкий</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="417"/>
+        <location filename="../qml/MainScreenItem.qml" line="417"/>
         <source>Computer - Medium</source>
         <translation>Средний</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="419"/>
+        <location filename="../qml/MainScreenItem.qml" line="419"/>
         <source>Computer - Difficult</source>
         <translation>Трудный</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="421"/>
+        <location filename="../qml/MainScreenItem.qml" line="421"/>
         <source>Computer - Hard</source>
         <translation>Сложный</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="423"/>
+        <location filename="../qml/MainScreenItem.qml" line="423"/>
         <source>Computer - Very hard</source>
         <translation>Очень сложный</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="425"/>
+        <location filename="../qml/MainScreenItem.qml" line="425"/>
         <source>Computer - Impossible</source>
         <translation>Невозможный</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="427"/>
-        <location filename="../qml/main.qml" line="448"/>
+        <location filename="../qml/MainScreenItem.qml" line="427"/>
+        <location filename="../qml/MainScreenItem.qml" line="448"/>
         <source>Skill %1</source>
         <translation>Уровень %1</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="434"/>
+        <location filename="../qml/MainScreenItem.qml" line="434"/>
         <source>Elementary</source>
         <translation>Очень лёгкий</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="436"/>
+        <location filename="../qml/MainScreenItem.qml" line="436"/>
         <source>Easy</source>
         <translation>Лёгкий</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="438"/>
+        <location filename="../qml/MainScreenItem.qml" line="438"/>
         <source>Medium</source>
         <translation>Средний</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="440"/>
+        <location filename="../qml/MainScreenItem.qml" line="440"/>
         <source>Difficult</source>
         <translation>Трудный</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="442"/>
+        <location filename="../qml/MainScreenItem.qml" line="442"/>
         <source>Hard</source>
         <translation>Сложный</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="444"/>
+        <location filename="../qml/MainScreenItem.qml" line="444"/>
         <source>Very hard</source>
         <translation>Очень сложный</translation>
     </message>
     <message>
-        <location filename="../qml/main.qml" line="446"/>
+        <location filename="../qml/MainScreenItem.qml" line="446"/>
         <source>Impossible</source>
         <translation>Невозможный</translation>
     </message>

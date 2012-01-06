@@ -21,19 +21,19 @@
  *
  ********************************************************************/
 
-import Qt 4.7
+import QtQuick 1.0
 import Reversi 1.0
 import "UIConstants.js" as UI
 
 Item {
     id: rootWindow
 
-    property int chipWidth: 45
-    property int chipHeight: 45
+    property int chipWidth: 45*UI.PLATFORM_SCALE_FACTOR
+    property int chipHeight: 45*UI.PLATFORM_SCALE_FACTOR
     property int topOffset: 0
     property int leftOffset: 0
 
-    property bool inPortrait: (rootWindow.width < rootWindow.height)? true: false
+    property bool isInPortrait: (rootWindow.width < rootWindow.height)? true: false
 
     property int moveAnimationDuration: 500
 
@@ -153,16 +153,16 @@ Item {
         id: infoBanner
         z: 2
         anchors.top: infoArea.top
-        anchors.topMargin: 10
-        width: infoArea.width - 30 * 2
+        anchors.topMargin: 10*UI.PLATFORM_SCALE_FACTOR
+        width: infoArea.width - 30 * 2*UI.PLATFORM_SCALE_FACTOR
         anchors.horizontalCenter: infoArea.horizontalCenter
     }
 
     Item {
         id: infoArea
-        anchors.top: inPortrait? chipGrid.bottom: parent.top
+        anchors.top: isInPortrait? chipGrid.bottom: parent.top
         anchors.bottom: parent.bottom
-        anchors.left: inPortrait? parent.left: chipGrid.right
+        anchors.left: isInPortrait? parent.left: chipGrid.right
         anchors.right: parent.right
 
         Item {
@@ -188,12 +188,12 @@ Item {
         Item {
             id: buttonsRow
             anchors.top: countInfo.bottom
-            anchors.topMargin: 10
-            anchors.leftMargin: 10
+            anchors.topMargin: 10*UI.PLATFORM_SCALE_FACTOR
+            anchors.leftMargin: 10*UI.PLATFORM_SCALE_FACTOR
             anchors.left: parent.left
-            anchors.rightMargin: 10
+            anchors.rightMargin: 10*UI.PLATFORM_SCALE_FACTOR
             anchors.right: parent.right
-            property int buttonWidth: width/3 - 4
+            property int buttonWidth: width/3 - 4*UI.PLATFORM_SCALE_FACTOR
             height: undoButton.height
             Button {
                 id: undoButton
@@ -229,7 +229,7 @@ Item {
             }
 
             Button {
-                text: gameEngine.setupMode? qsTr("Done"): inPortrait? qsTr("Setup"): qsTr("Setup_short")
+                text: gameEngine.setupMode? qsTr("Done"): isInPortrait? qsTr("Setup"): qsTr("Setup_short")
                 enabled: true
                 width:buttonsRow.buttonWidth
                 anchors.right: parent.right
@@ -257,9 +257,9 @@ Item {
 
         CheckBox {
             anchors.top: buttonsRow.bottom
-            anchors.topMargin: 10
+            anchors.topMargin: 10*UI.PLATFORM_SCALE_FACTOR
             anchors.left: parent.left
-            anchors.leftMargin: 10
+            anchors.leftMargin: 10*UI.PLATFORM_SCALE_FACTOR
             text: qsTr("Show possible moves")
             enabled: rootWindow.showPossibleMoves
             onClicked: {
@@ -269,12 +269,13 @@ Item {
 
         Button {
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: 15
+            anchors.bottomMargin: 15*UI.PLATFORM_SCALE_FACTOR
             anchors.left: parent.left
-            anchors.leftMargin: 12
-            width: 100
-            height: 60
+            anchors.leftMargin: 10*UI.PLATFORM_SCALE_FACTOR
+            width: 100*UI.PLATFORM_SCALE_FACTOR
+            height: 60*UI.PLATFORM_SCALE_FACTOR
             text: qsTr("Exit")
+            visible: UI.PLATFORM_SHOW_EXIT
             onClicked: {
                 gameEngine.interrupt();
                 Qt.quit();
@@ -282,11 +283,11 @@ Item {
         }
         Button {
             anchors.bottom: parent.bottom
-            anchors.bottomMargin: 15
+            anchors.bottomMargin: 15*UI.PLATFORM_SCALE_FACTOR
             anchors.right: parent.right
-            anchors.rightMargin: 12
+            anchors.rightMargin: 10*UI.PLATFORM_SCALE_FACTOR
             text: qsTr("About")
-            width: 120
+            width: 120*UI.PLATFORM_SCALE_FACTOR
             onClicked: {
                 var obj = mapToItem(aboutScreen, mouseX, mouseY);
                 gameEngine.interrupt();
@@ -495,6 +496,7 @@ Item {
     }
 
     Component.onCompleted: {
+        console.log("Main item loaded:"+rootWindow.width+"x"+rootWindow.height);
         skillModel.append({"data": getStringForSkill(true, -1), "skill": -1});
         for (var i = 1; i <= 7; i++) {
             skillModel.append({"data": getStringForSkill(false, i), "skill": i});

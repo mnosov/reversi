@@ -1,23 +1,6 @@
 <RCC>
     <qresource prefix="/">
-        <file>resources/background.png</file>
-        <file>resources/boardbig.png</file>
-        <file>resources/bw1.png</file>
-        <file>resources/bw2.png</file>
-        <file>resources/bw3.png</file>
-        <file>resources/bw4.png</file>
-        <file>resources/bw5.png</file>
-        <file>resources/bw6.png</file>
-        <file>resources/bw7.png</file>
-        <file>resources/bw8.png</file>
-        <file>resources/bw9.png</file>
-        <file>resources/bw10.png</file>
-        <file>resources/bw11.png</file>
-        <file>resources/bw12.png</file>
-        <file>resources/check.png</file>
-        <file>resources/reversi.png</file>
-        <file>qml/UIConstants.js</file>
-        <file>qml/main.qml</file>
+        <file>qml/MainScreenItem.qml</file>
         <file>qml/Chip.qml</file>
         <file>qml/Dialog.qml</file>
         <file>qml/Button.qml</file>

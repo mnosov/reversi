@@ -21,15 +21,16 @@
  *
  ********************************************************************/
 import QtQuick 1.0
+import "UIConstants.js" as UI
 
 Rectangle {
     id: root
-    width: 100
-    height: 50
+    width: 100*UI.PLATFORM_SCALE_FACTOR
+    height: 50*UI.PLATFORM_SCALE_FACTOR
     signal clicked(int mouseX, int mouseY)
     property bool enabled: true
     property alias text: textBlock.text
-    radius: 3
+    radius: 3*UI.PLATFORM_SCALE_FACTOR
     border.color: "black"
     gradient: Gradient {
         GradientStop {position: 0.0; color: marea.pressed? "#ccb872": "#ecdeac"}
@@ -39,12 +40,12 @@ Rectangle {
     Text {
         id: textBlock
         anchors.centerIn: parent
-        width: parent.width - 10
+        width: parent.width - 10*UI.PLATFORM_SCALE_FACTOR
         wrapMode: Text.WordWrap
         verticalAlignment: Text.AlignVCenter
         horizontalAlignment: Text.AlignHCenter
         anchors.verticalCenterOffset: marea.pressed? -1: 0
-        font.pixelSize: 18
+        font.pixelSize: 18*UI.PLATFORM_SCALE_FACTOR
         color: root.enabled? (marea.pressed? "#404040": "black"): "#404040"
     }
 

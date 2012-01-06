@@ -59,7 +59,7 @@ Item {
     Image {
         id: imgContent
         anchors.centerIn: parent
-        source: ":/resources/bw"+chipRoot.imgIndex+".png"
+        source: "qrc:/resources/bw"+chipRoot.imgIndex+".png"
         opacity: (chipRoot.curColor == Defs.NoColor)? 0: 1
         //property real scaleFactor: (gameEngine.setupMode? 1.15: 1)
         //scale: opacity * scaleFactor

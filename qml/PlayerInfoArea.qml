@@ -22,19 +22,20 @@
  ********************************************************************/
 import QtQuick 1.0
 import Reversi 1.0
+import "UIConstants.js" as UI
 
 Item {
     id: playerCountInfo
     property int color: Defs.White
-    height: 68
+    height: 68*UI.PLATFORM_SCALE_FACTOR
     Text {
         id: playerTitle
         anchors.top: parent.top
-        anchors.topMargin: 10
+        anchors.topMargin: 10*UI.PLATFORM_SCALE_FACTOR
         anchors.horizontalCenter: parent.horizontalCenter
         text: rootWindow.getShortStringForSkill(playerCountInfo.color == Defs.White? gameEngine.isWhiteHuman: gameEngine.isBlackHuman,
                                                 playerCountInfo.color == Defs.White? gameEngine.whiteSkill: gameEngine.blackSkill)
-        font.pixelSize: 19
+        font.pixelSize: 19*UI.PLATFORM_SCALE_FACTOR
         color: marea.pressed? "grey": "white"
     }
     Rectangle {
@@ -42,7 +43,7 @@ Item {
         anchors.top: playerTitle.top
         anchors.left: playerTitle.width > countInfo.width? playerTitle.left: countInfo.left
         anchors.right: playerTitle.width > countInfo.width? playerTitle.right: countInfo.right
-        anchors.margins: -5
+        anchors.margins: -5*UI.PLATFORM_SCALE_FACTOR
         color: "#00000000"
         border.color: "black"
         visible: gameEngine.curPlayer == playerCountInfo.color
@@ -54,11 +55,11 @@ Item {
         height: imgContent.height
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.bottom: parent.bottom
-        anchors.bottomMargin: 7
-        spacing: 5
+        anchors.bottomMargin: 7*UI.PLATFORM_SCALE_FACTOR
+        spacing: 5*UI.PLATFORM_SCALE_FACTOR
         Image {
             id: imgContent
-            source: playerCountInfo.color == Defs.White? ":/resources/bw12.png": ":/resources/bw1.png"
+            source: playerCountInfo.color == Defs.White? "qrc:/resources/bw12.png": "qrc:/resources/bw1.png"
         }
         Text {
             id: playerInfo
@@ -67,7 +68,7 @@ Item {
                 return playerCountInfo.color == Defs.White? gameEngine.whiteCount: gameEngine.blackCount;
             }
 
-            font.pixelSize: 20
+            font.pixelSize: 20*UI.PLATFORM_SCALE_FACTOR
             color: marea.pressed? "grey": "white"
         }
     }

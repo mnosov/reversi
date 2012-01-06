@@ -22,6 +22,7 @@
  ********************************************************************/
 import QtQuick 1.0
 import Qt.labs.particles 1.0
+import "UIConstants.js" as UI
 
 Dialog {
     id: rootDialog
@@ -53,8 +54,8 @@ Dialog {
             anchors.horizontalCenter: parent.horizontalCenter
             horizontalAlignment: Text.AlignHCenter
             anchors.top: parent.top
-            anchors.topMargin: inPortrait? 100: 20
-            font.pixelSize: 45
+            anchors.topMargin: isInPortrait? 100*UI.PLATFORM_SCALE_FACTOR: 20*UI.PLATFORM_SCALE_FACTOR
+            font.pixelSize: 45*UI.PLATFORM_SCALE_FACTOR
             color: {
                 if (gameEngine.whiteCount > gameEngine.blackCount) {
                     return "white"
@@ -64,7 +65,7 @@ Dialog {
                 return "#808080"
             }
 
-            width: parent.width - 24
+            width: parent.width - 24*UI.PLATFORM_SCALE_FACTOR
             wrapMode: Text.WordWrap
             text: {
                 if (gameEngine.whiteCount == gameEngine.blackCount) {
@@ -100,10 +101,10 @@ Dialog {
             z: 5
             horizontalAlignment: Text.AlignHCenter
             anchors.left: parent.left
-            anchors.leftMargin: 12
+            anchors.leftMargin: 12*UI.PLATFORM_SCALE_FACTOR
             anchors.top: titleText.bottom
-            anchors.topMargin: inPortrait? 100: 20
-            font.pixelSize: 25
+            anchors.topMargin: isInPortrait? 100*UI.PLATFORM_SCALE_FACTOR: 20*UI.PLATFORM_SCALE_FACTOR
+            font.pixelSize: 25*UI.PLATFORM_SCALE_FACTOR
             color: {
                 if (gameEngine.whiteCount > gameEngine.blackCount) {
                     return "white"
@@ -113,7 +114,7 @@ Dialog {
                 return "#808080"
             }
 
-            width: parent.width - 24
+            width: parent.width - 24*UI.PLATFORM_SCALE_FACTOR
             wrapMode: Text.WordWrap
             visible: rootDialog.clearWin && rootDialog.playerWins && rootDialog.playerAgainstComp
             text: {

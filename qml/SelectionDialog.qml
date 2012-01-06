@@ -21,13 +21,14 @@
  *
  ********************************************************************/
 import QtQuick 1.0
+import "UIConstants.js" as UI
 
 Dialog {
     id: selectionRootDialog
     property alias model: listView.model
 
-    property int visibleItems: inPortrait? 8: 5
-    property int itemHeight: 60
+    property int visibleItems: isInPortrait? 8: 5
+    property int itemHeight: 60*UI.PLATFORM_SCALE_FACTOR
 
     property int selectedIndex: -1
 
@@ -56,7 +57,7 @@ Dialog {
                 }
             }
             Item {
-                width: Math.max(txt.paintedWidth + 20, 100)
+                width: Math.max(txt.paintedWidth + 20*UI.PLATFORM_SCALE_FACTOR, 100*UI.PLATFORM_SCALE_FACTOR)
                 height: selectionRootDialog.itemHeight
                 anchors.horizontalCenter: parent.horizontalCenter
                 Rectangle {
@@ -68,7 +69,7 @@ Dialog {
                     id: txt
                     anchors.centerIn: parent
                     text: model.data
-                    font.pixelSize: 26
+                    font.pixelSize: 26*UI.PLATFORM_SCALE_FACTOR
                     color: {
                         if (selectedIndex == index) {
                             return "blue"

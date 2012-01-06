@@ -21,15 +21,16 @@
  *
  ********************************************************************/
 import QtQuick 1.0
+import "UIConstants.js" as UI
 
 Rectangle {
     id: root
-    width: checkbox.width + textBlock.width + 5*3
-    height: 40
+    width: checkbox.width + textBlock.width + 5*3*UI.PLATFORM_SCALE_FACTOR
+    height: 40*UI.PLATFORM_SCALE_FACTOR
     signal clicked
     property bool enabled: true
     property alias text: textBlock.text
-    radius: 3
+    radius: 3*UI.PLATFORM_SCALE_FACTOR
     border.color: "black"
     gradient: Gradient {
         GradientStop {position: 0.0; color: marea.pressed? "#ccb872": "#ecdeac"}
@@ -38,7 +39,7 @@ Rectangle {
 
     Rectangle {
         anchors.fill: parent
-        radius: 3
+        radius: 3*UI.PLATFORM_SCALE_FACTOR
         border.color: "black"
         color: "gray"
         opacity: 0.5
@@ -50,16 +51,16 @@ Rectangle {
         anchors.verticalCenter: parent.verticalCenter
         anchors.verticalCenterOffset: marea.pressed? -1: 0
         anchors.left: parent.left
-        anchors.leftMargin: 5
+        anchors.leftMargin: 5*UI.PLATFORM_SCALE_FACTOR
         source: "qrc:/resources/check.png"
     }
     Text {
         id: textBlock
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: checkbox.right
-        anchors.leftMargin: 5
+        anchors.leftMargin: 5*UI.PLATFORM_SCALE_FACTOR
         anchors.verticalCenterOffset: marea.pressed? -1: 0
-        font.pixelSize: 18
+        font.pixelSize: 18*UI.PLATFORM_SCALE_FACTOR
         color: marea.pressed? "#404040": "black"
     }
 

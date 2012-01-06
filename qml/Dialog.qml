@@ -21,6 +21,7 @@
  *
  ********************************************************************/
 import QtQuick 1.0
+import "UIConstants.js" as UI
 
 Item {
     property int animDuration: 300
