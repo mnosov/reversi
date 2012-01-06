@@ -204,6 +204,8 @@ Item {
                 onClicked: {
                     if (gameEngine.canUndo()) {
                         gameEngine.interrupt();
+                        proxyTimer.stop();
+                        moveTimer.stop();
                         undoTimer.lastUndo = false;
                         undoing = true;
                         undoTimer.lastUndo = !gameEngine.undo();
@@ -220,6 +222,8 @@ Item {
                     if (gameEngine.isComputerThinking()) {
                         isPendingNew = true;
                         gameEngine.interrupt();
+                        proxyTimer.stop();
+                        moveTimer.stop();
                     } else {
                         gameEngine.restartGame();
                         isLastGameClear = true;
@@ -235,6 +239,8 @@ Item {
                 anchors.right: parent.right
                 onClicked: {
                     gameEngine.interrupt();
+                    proxyTimer.stop();
+                    moveTimer.stop();
                     if (!gameEngine.setupMode) {
                         gameEngine.setupMode = true;
                     } else {
@@ -291,6 +297,8 @@ Item {
             onClicked: {
                 var obj = mapToItem(aboutScreen, mouseX, mouseY);
                 gameEngine.interrupt();
+                proxyTimer.stop();
+                moveTimer.stop();
                 aboutScreen.show(obj.x, obj.y);
             }
         }
@@ -298,6 +306,8 @@ Item {
 
     function showSelectionDialog(playerColor, startX, startY) {
         gameEngine.interrupt();
+        proxyTimer.stop();
+        moveTimer.stop();
         selectSkill.showFor(playerColor, startX, startY)
     }
 
