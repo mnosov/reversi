@@ -66,6 +66,7 @@ Item {
         interval: 10
         repeat: false
         onTriggered: {
+            proxyTimer.interval = 10;
             moveTimer.restart();
         }
     }
@@ -203,9 +204,7 @@ Item {
                 enabled: !gameEngine.setupMode
                 onClicked: {
                     if (gameEngine.canUndo()) {
-                        gameEngine.interrupt();
-                        proxyTimer.stop();
-                        moveTimer.stop();
+                        interruptCurrentThinking();
                         undoTimer.lastUndo = false;
                         undoing = true;
                         undoTimer.lastUndo = !gameEngine.undo();
@@ -221,9 +220,7 @@ Item {
                 onClicked: {
                     if (gameEngine.isComputerThinking()) {
                         isPendingNew = true;
-                        gameEngine.interrupt();
-                        proxyTimer.stop();
-                        moveTimer.stop();
+                        interruptCurrentThinking();
                     } else {
                         gameEngine.restartGame();
                         isLastGameClear = true;
@@ -238,9 +235,7 @@ Item {
                 width:buttonsRow.buttonWidth
                 anchors.right: parent.right
                 onClicked: {
-                    gameEngine.interrupt();
-                    proxyTimer.stop();
-                    moveTimer.stop();
+                    interruptCurrentThinking();
                     if (!gameEngine.setupMode) {
                         gameEngine.setupMode = true;
                     } else {
@@ -283,7 +278,7 @@ Item {
             text: qsTr("Exit")
             visible: UI.PLATFORM_SHOW_EXIT
             onClicked: {
-                gameEngine.interrupt();
+                interruptCurrentThinking();
                 Qt.quit();
             }
         }
@@ -296,18 +291,14 @@ Item {
             width: 120*UI.PLATFORM_SCALE_FACTOR
             onClicked: {
                 var obj = mapToItem(aboutScreen, mouseX, mouseY);
-                gameEngine.interrupt();
-                proxyTimer.stop();
-                moveTimer.stop();
+                interruptCurrentThinking();
                 aboutScreen.show(obj.x, obj.y);
             }
         }
     }
 
     function showSelectionDialog(playerColor, startX, startY) {
-        gameEngine.interrupt();
-        proxyTimer.stop();
-        moveTimer.stop();
+        interruptCurrentThinking();
         selectSkill.showFor(playerColor, startX, startY)
     }
 
@@ -395,6 +386,12 @@ Item {
         proxyTimer.restart();
     }
 
+    function interruptCurrentThinking() {
+        gameEngine.interrupt();
+        proxyTimer.stop();
+        proxyTimer.interval = 10;
+        moveTimer.stop();
+    }
 
     function checkMove() {
         if (gameEngine.setupMode) {
@@ -511,6 +508,11 @@ Item {
         for (var i = 1; i <= 7; i++) {
             skillModel.append({"data": getStringForSkill(false, i), "skill": i});
         }
-        checkMove();
+        if (!humanMove) {
+            proxyTimer.interval = 2000;
+            restartTimer();
+        } else {
+            checkMove();
+        }
     }
 }

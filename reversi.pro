@@ -1,3 +1,5 @@
+TEMPLATE = app
+TARGET = Reversi
 # Add more folders to ship with the application, here
 #folder_01.source = qml/reversi
 #folder_01.target = qml
