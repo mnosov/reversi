@@ -176,7 +176,6 @@ Item {
                 id: playerCountInfo
                 width: parent.width/2
                 color: Defs.White
-
             }
             PlayerInfoArea {
                 id: compCountInfo
@@ -509,7 +508,7 @@ Item {
             skillModel.append({"data": getStringForSkill(false, i), "skill": i});
         }
         if (!humanMove) {
-            proxyTimer.interval = 2000;
+            proxyTimer.interval = 1000;
             restartTimer();
         } else {
             checkMove();

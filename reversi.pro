@@ -41,6 +41,14 @@ symbian {
 } else {
     # Speed up launching on MeeGo/Harmattan when using applauncherd daemon
 #    CONFIG += qdeclarative-boostable
+unix {
+    splashscreen.path = /opt/$${TARGET}/images
+    splashscreen.files += ./resources_meego/splash_portrait.png
+    splashscreen.files += ./resources_meego/splash_landscape.png
+
+    #MAKE INSTALL
+    INSTALLS += splashscreen
+}
 }
 
 INCLUDEPATH += .
