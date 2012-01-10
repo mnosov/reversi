@@ -123,15 +123,15 @@ Dialog {
                     return qsTr("You won against opponent with Elementary level. Try to play with harder level.")
                 } else if (compSkill == 2) {
                     return qsTr("You're having good skills for winning Easy level. How about Medium?")
-                } else if (skill == 3) {
+                } else if (compSkill == 3) {
                     return qsTr("Well, it was not so easy to win Medium level, was it?")
-                } else if (skill == 4) {
+                } else if (compSkill == 4) {
                     return qsTr("Nice game, congratulations!")
-                } else if (skill == 5) {
+                } else if (compSkill == 5) {
                     return qsTr("Wow! Excellent victory!")
-                } else if (skill == 6) {
+                } else if (compSkill == 6) {
                     return qsTr("This game was amazing! You're becoming Reversi professional :-)")
-                } else if (skill == 7) {
+                } else if (compSkill == 7) {
                     return qsTr("Unbelievable! You won against hardest level! What's next? Maybe play with different color?")
                 }
             }

@@ -4,7 +4,7 @@ Version=1.0
 Type=Application
 Terminal=false
 Name=Reversi
-Exec=/usr/bin/invoker --type=d -s /opt/reversi/bin/reversi
+Exec=/usr/bin/invoker --type=d -s  -S /opt/Reversi/images/splash_portrait.png -L /opt/Reversi/images/splash_landscape.png /opt/Reversi/bin/Reversi
 Icon=/usr/share/icons/hicolor/80x80/apps/reversi80.png
 X-Window-Icon=
 X-HildonDesk-ShowInToolbar=true

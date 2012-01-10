@@ -29,6 +29,9 @@
 #include <QtDeclarative>
 #include "qmlapplicationviewer.h"
 #include "gameengine.h"
+#if defined(Q_OS_UNIX) && !defined(MEEGO_SIMULATOR_BUILD) && !defined(Q_OS_SYMBIAN)
+#include <MDeclarativeCache>
+#endif
 
 Q_DECL_EXPORT int main(int argc, char *argv[])
 {
@@ -65,13 +68,16 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 #else
     qDebug() << "Build for MeeGo";
     QScopedPointer<QApplication> app(createApplication(argc, argv));
+#ifdef MEEGO_SIMULATOR_BUILD
     QScopedPointer<QmlApplicationViewer> viewer(QmlApplicationViewer::create());
+    viewer->setOrientation(QmlApplicationViewer::ScreenOrientationAuto);
+#else
+    QDeclarativeView *viewer = MDeclarativeCache::qDeclarativeView();
+#endif
 
     QTranslator trans;
     trans.load(":/i18n/reversi");
     app->installTranslator(&trans);
-
-    viewer->setOrientation(QmlApplicationViewer::ScreenOrientationAuto);
 
     QDeclarativeContext *ctxt = viewer->rootContext();
     if (!ctxt)
@@ -90,8 +96,11 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     viewer->setSource(QUrl("qrc:qml/mainMeeGo.qml"));
     //viewer->setMainQmlFile(QLatin1String("qml/reversi/mainMeeGo.qml"));
 
+#ifdef MEEGO_SIMULATOR_BUILD
     viewer->showExpanded();
-
+#else
+    viewer->showFullScreen();
+#endif
     return app->exec();
 #endif
 }

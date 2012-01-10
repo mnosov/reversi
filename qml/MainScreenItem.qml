@@ -45,10 +45,8 @@ Item {
     property bool showPossibleMoves: false
 
     property bool isLastGameClear: true //this means that you didn't change level, moved back, or setup position during the game
+
     property bool isPendingNew: false
-/*    onCurrentMoveChanged: {
-        gameModel.updateMovePossibity();
-    }*/
 
     Image {
         anchors.fill: parent
@@ -176,7 +174,6 @@ Item {
                 id: playerCountInfo
                 width: parent.width/2
                 color: Defs.White
-
             }
             PlayerInfoArea {
                 id: compCountInfo
@@ -242,7 +239,7 @@ Item {
                         gameEngine.setupMode = false;
                         gameEngine.clearUndoStack();
                         gameModel.updateMovePossibity();
-                        if (gameEngine.isInitialPosition()) {
+                        if (gameEngine.isInitialPosition() || gameEngine.isOneMoved()) {
                             isLastGameClear = true;
                         } else {
                             isLastGameClear = false; //if player wins after setup position - it is not a clear victory
@@ -330,7 +327,7 @@ Item {
         }
 
         onAccepted: {
-            isLastGameClear = gameEngine.isInitialPosition(); //if player changes skill during play - it is not clear victory
+            isLastGameClear = gameEngine.isInitialPosition() || gameEngine.isOneMoved(); //if player changes skill during play - it is not clear victory
             if (destColor == Defs.White) {
                 if (selectedIndex == 0) {
                     gameEngine.isWhiteHuman = true;
@@ -509,7 +506,7 @@ Item {
             skillModel.append({"data": getStringForSkill(false, i), "skill": i});
         }
         if (!humanMove) {
-            proxyTimer.interval = 2000;
+            proxyTimer.interval = 1000;
             restartTimer();
         } else {
             checkMove();

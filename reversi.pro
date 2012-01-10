@@ -39,8 +39,20 @@ symbian {
 
     vendorinfo += "%{\"Michael.Nosov@gmail.com\"}" ":\"Michael.Nosov@gmail.com\""
 } else {
+unix {
+simulator {
+    DEFINES += MEEGO_SIMULATOR_BUILD
+} else {
     # Speed up launching on MeeGo/Harmattan when using applauncherd daemon
-#    CONFIG += qdeclarative-boostable
+    CONFIG += qdeclarative-boostable
+}
+    splashscreen.path = /opt/$${TARGET}/images
+    splashscreen.files += ./resources_meego/splash_portrait.png
+    splashscreen.files += ./resources_meego/splash_landscape.png
+
+    #MAKE INSTALL
+    INSTALLS += splashscreen
+}
 }
 
 INCLUDEPATH += .

@@ -119,6 +119,37 @@ bool GameEngine::isInitialPosition() {
     return correctCells == 64;
 }
 
+bool GameEngine::isOneMoved() {
+    if (m_score[Defs::White] != 1 ||
+            m_score[Defs::Black] != 4 ||
+            m_curPlayer != Defs::White) {
+        return false;
+    }
+    if (m_cells[3][3] != Defs::White &&
+            m_cells[4][4] != Defs::White) {
+        return false;
+    }
+    if (m_cells[3][4] != Defs::Black ||
+            m_cells[4][3] != Defs::Black) {
+        return false;
+    }
+    bool white1 = (m_cells[3][3] == Defs::White);
+    if (white1) {
+        if (m_cells[4][4] == Defs::Black &&
+                (m_cells[5][4] == Defs::Black ||
+                 m_cells[4][5] == Defs::Black)) {
+            return true;
+        }
+    } else {
+        if (m_cells[3][3] == Defs::Black &&
+                (m_cells[3][2] == Defs::Black ||
+                 m_cells[2][3] == Defs::Black)) {
+            return true;
+        }
+    }
+    return false;
+}
+
 int GameEngine::playerScore( Defs::ChipColor player ) const
 {
     return m_score[player];

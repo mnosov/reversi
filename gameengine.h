@@ -74,6 +74,7 @@ public:
     Q_INVOKABLE bool canUndo();
     Q_INVOKABLE void clearUndoStack();
     Q_INVOKABLE bool isInitialPosition();
+    Q_INVOKABLE bool isOneMoved();
 
     Q_INVOKABLE void changeColor(int index); //setup position mode
     Q_INVOKABLE void setFirstMove(int color); //setup position mode
