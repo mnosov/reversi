@@ -226,12 +226,30 @@ Dialog {
 
         }
     }
+    property bool isFullyActive: false
     onFullyActive: {
-        particlesLoader.sourceComponent = particles
+        isFullyActive = true;
+        loadOrUnloadParticles();
     }
 
     onFullyClosed: {
-        particlesLoader.sourceComponent = null
+        isFullyActive = false;
+        loadOrUnloadParticles();
+    }
+    Connections {
+        target: gameEngine
+        onAppInBackgroundChanged: {
+            loadOrUnloadParticles();
+        }
+    }
+    function loadOrUnloadParticles() {
+        if (!gameEngine.appInBackground && isFullyActive) {
+            console.log("Load particles");
+            particlesLoader.sourceComponent = particles
+        } else {
+            console.log("Unload particles");
+            particlesLoader.sourceComponent = null
+        }
     }
 }
 

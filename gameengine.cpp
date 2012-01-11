@@ -26,6 +26,7 @@
 
 #include <QDebug>
 #include <QDeclarativeContext>
+#include <QEvent>
 
 GameEngine::GameEngine(QDeclarativeContext *context, QObject* parent):
     QObject(parent),
@@ -38,7 +39,8 @@ GameEngine::GameEngine(QDeclarativeContext *context, QObject* parent):
     m_setupMode(false),
     m_whiteSkill(1),
     m_blackSkill(1),
-    m_thinkingInProgress(false)
+    m_thinkingInProgress(false),
+    m_appInBackground(false)
 {
 
     restartGame();
@@ -665,4 +667,15 @@ void GameEngine::setChipColor(Defs::ChipColor color, int row, int col)
 
     //qDebug() << "Score of White player:" << m_score[White];
     //qDebug() << "Score of Black player:" << m_score[Black];
+}
+
+bool GameEngine::eventFilter(QObject *obj, QEvent *event)
+{
+    if (event->type() == QEvent::ApplicationDeactivate) {
+        setAppInBackground(true);
+    }
+    if (event->type() == QEvent::ApplicationActivate) {
+        setAppInBackground(false);
+    }
+    return QObject::eventFilter(obj, event);
 }

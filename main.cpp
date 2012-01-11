@@ -53,6 +53,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     }
 
     GameEngine gameEng (ctxt);
+    app.installEventFilter(&gameEng);
 
     qmlRegisterUncreatableType<GameEngine>("Reversi", 1, 0, "GameEngine", "should not be created there");
     qmlRegisterUncreatableType<Defs>("Reversi", 1, 0, "Defs", "should not be created there");
@@ -86,6 +87,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
     }
 
     GameEngine gameEng (ctxt);
+    app->installEventFilter(&gameEng);
 
     qmlRegisterUncreatableType<GameEngine>("Reversi", 1, 0, "GameEngine", "should not be created there");
     qmlRegisterUncreatableType<Defs>("Reversi", 1, 0, "Defs", "should not be created there");

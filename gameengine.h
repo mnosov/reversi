@@ -41,6 +41,7 @@ class GameEngine: public QObject, public GameInterface {
     Q_PROPERTY (bool undoing READ getUndoing WRITE setUndoing NOTIFY undoingChanged)
     Q_PROPERTY (int curPlayer READ getCurPlayer WRITE setCurPlayer NOTIFY curPlayerChanged)
     Q_PROPERTY (bool setupMode READ getSetupMode WRITE setSetupMode NOTIFY setupModeChanged)
+    Q_PROPERTY (bool appInBackground READ appInBackground NOTIFY appInBackgroundChanged)
 
 public:
     explicit GameEngine(QDeclarativeContext *context, QObject* parent = 0);
@@ -67,6 +68,8 @@ public: //from GameInterface
     bool isMovePossible( const KReversiPos& move ) const;
 
 public:
+    virtual bool eventFilter(QObject *, QEvent *);
+
     Q_INVOKABLE bool makeMove(int index);
     Q_INVOKABLE bool makeComputerMove();
     Q_INVOKABLE bool undo();
@@ -141,6 +144,8 @@ public:
         }
     }
 
+    bool appInBackground() const {return m_appInBackground;}
+    void setAppInBackground(bool appInBg) {m_appInBackground=appInBg; emit appInBackgroundChanged();}
 
 
     /**
@@ -165,6 +170,7 @@ signals:
     void undoingChanged();
     void setupModeChanged();
     void curPlayerChanged();
+    void appInBackgroundChanged();
 
 private:
     enum Direction { Up, Down, Right, Left, UpLeft, UpRight, DownLeft, DownRight };
@@ -239,6 +245,7 @@ private:
     int m_whiteSkill;
     int m_blackSkill;
     bool m_thinkingInProgress;
+    bool m_appInBackground;
 };
 
 #endif //REVERSI_GAME_ENGINE_H
