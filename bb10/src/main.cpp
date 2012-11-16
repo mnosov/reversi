@@ -48,7 +48,7 @@ int main(int argc, char **argv)
 {
     //-- this is where the server is started etc
     Application app(argc, argv);
-    qInstallMsgHandler(myMessageOutputFile);
+    // qInstallMsgHandler(myMessageOutputFile);
     //-- localization support
     QTranslator translator;
     QString locale_string = QLocale().name();

@@ -45,13 +45,13 @@
 
     <!-- Description, displayed in the BlackBerry Tablet OS application installer.
          May have multiple values for each language. See samples or xsd schema file. Optional. -->
-    <description>The reversi application</description>
+    <description>The Reversi application</description>
 
     <!-- Copyright information. Optional. -->
     <!-- <copyright></copyright> -->
 
     <!--  Name of author which is used for signing. Must match the developer name of your development certificate. -->
-    <author>Example Inc.</author>
+    <author>Michael Nosov</author>
     
     <!--  Unique author ID assigned by signing authority. Required if using debug tokens. -->
     <!-- <authorId>ABC1234YjsnUk235h</authorId> -->
@@ -97,9 +97,9 @@
     <!-- <splashscreen></splashscreen> -->
     
     <!-- Locale support -->
-    <asset path="translations" dest="qm">
+    <!-- <asset path="translations" dest="qm">
         <include name="*.qm"/>
-    </asset>
+    </asset> -->
     
     <!-- Request permission to execute native code.  Required for native applications. -->
     <action system="true">run_native</action>
