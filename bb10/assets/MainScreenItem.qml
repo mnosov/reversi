@@ -22,7 +22,6 @@
  ********************************************************************/
 
 import bb.cascades 1.0
-import CustomTimer 1.0
 import Reversi 1.0
 
 ContainerWithSize {
@@ -65,50 +64,51 @@ ContainerWithSize {
         imageSource: "asset:///images/boardbig.png"
     }
 
-    Timer {
-        id: proxyTimer
-        interval: 10
-        onTimeout: {
-            console.log("Proxy timer triggered");
-            proxyTimer.stop();
-            proxyTimer.interval = 10;
-            moveTimer.restart();
-        }
-    }
-
-    Timer {
-        id: moveTimer
-        interval: 500
-        onTimeout: {
-            moveTimer.stop();
-            console.log("Timer triggered: game over = " + gameEngine.isGameOver());
-            checkMove();
-        }
-    }
-
-    Timer { //TODO
-        id: undoTimer
-        interval: moveAnimationDuration
-        //repeat: true
-        //running: undoing
-        property bool lastUndo: false
-        onTimeout: {
-            console.log("Undo timer triggered");
-            if (gameEngine.setupMode) {
-                return;
-            }
-
-            if (lastUndo) {
-                undoing = false;
-                return;
-            }
-
-            if (gameEngine.canUndo()) {
-                lastUndo = !gameEngine.undo();
-            }
-        }
-    }
-
+    attachedObjects: [
+	    Timer {
+	        id: proxyTimer
+	        interval: 10
+	        onTimeout: {
+	            console.log("Proxy timer triggered");
+	            proxyTimer.stop();
+	            proxyTimer.interval = 10;
+	            moveTimer.stop();
+	            moveTimer.start();
+	        }
+	    },
+	    Timer {
+	        id: moveTimer
+	        interval: 500
+	        onTimeout: {
+	            moveTimer.stop();
+	            console.log("Timer triggered: game over = " + gameEngine.isGameOver());
+	            checkMove();
+	        }
+	    },
+	    Timer { //TODO
+	        id: undoTimer
+	        interval: moveAnimationDuration
+	        singleShot: false
+	        //running: undoing
+	        property bool lastUndo: false
+	        onTimeout: {
+	            console.log("Undo timer triggered");
+	            if (gameEngine.setupMode) {
+	                return;
+	            }
+	
+	            if (lastUndo) {
+	                undoTimer.stop();
+	                //undoing = false;
+	                return;
+	            }
+	
+	            if (gameEngine.canUndo()) {
+	                lastUndo = !gameEngine.undo();
+	            }
+	        }
+	    }
+	]
     ListView {
         id: chipGrid
         layout: GridListLayout {
@@ -218,7 +218,9 @@ ContainerWithSize {
                 if (gameEngine.canUndo()) {
                     interruptCurrentThinking();
                     undoTimer.lastUndo = false;
-                    undoing = true;
+                    //undoing = true;
+                    undoTimer.stop();
+                    undoTimer.start();
                     undoTimer.lastUndo = !gameEngine.undo();
                     isLastGameClear = false; //if player wins with "undo" - it is not a clear victory
                 }
@@ -373,7 +375,8 @@ ContainerWithSize {
     }
 
     function restartTimer() {
-        proxyTimer.restart();
+        proxyTimer.stop();
+        proxyTimer.start();
     }
 
     function interruptCurrentThinking() {

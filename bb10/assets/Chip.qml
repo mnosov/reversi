@@ -22,7 +22,6 @@
  ********************************************************************/
 import bb.cascades 1.0
 import Reversi 1.0
-import CustomTimer 1.0
 
 Container {
     id: chipRoot
@@ -130,24 +129,26 @@ Container {
         }
     ]
     
-    Timer {
-        id: animTimer
-        property int current: 0
-        property int dest: 0
-        interval: 20
-        onTimeout: {
-            console.log("AnimTimer triggered:" + current + " " + dest)
-            if (current < dest) {
-                current++
-            } else if (current > dest) {
-                current--
-            }
-            imgContent.imageSource = "asset:///images/bw"+current+".png"
-            if (current == dest) {
-                stop();
+    attachedObjects: [
+        Timer {
+            id: animTimer
+            property int current: 0
+            property int dest: 0
+            interval: 20
+            onTimeout: {
+                console.log("AnimTimer triggered:" + current + " " + dest)
+                if (current < dest) {
+                    current++
+                } else if (current > dest) {
+                    current--
+                }
+                imgContent.imageSource = "asset:///images/bw"+current+".png"
+                if (current == dest) {
+                    stop();
+                }
             }
         }
-    }
+    ]
     property bool pressed: false
     onTouch: {
         if (event.touchType == TouchType.Down) {

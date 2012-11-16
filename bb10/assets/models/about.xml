@@ -1,0 +1,10 @@
+<root>
+  <about>
+  <title data = "rules"/>
+  <body data = "desc and rules"/>
+  <title data = "authors"/>
+  <body data = "license"/>
+  <body data = "nosov"/>
+  <body data = "kde"/>
+  </about>
+</root>

@@ -21,7 +21,7 @@
  *
  ********************************************************************/
 import bb.cascades 1.0
-import CustomTimer 1.0
+import Reversi 1.0
 
 Container {
     id: banner
@@ -37,7 +37,8 @@ Container {
         text.text = txt;
         opacity = 1.0
         if (showTimer.running) {
-            showTimer.restart();
+            showTimer.stop();
+            showTimer.start();
         } else {
             showTimer.start();
         }
@@ -46,11 +47,13 @@ Container {
         opacity = 0.0
         showTimer.stop();
     }
-
+    topPadding: 24
+    bottomPadding: 24
     Label {
         id: text
         verticalAlignment: VerticalAlignment.Center
         horizontalAlignment: HorizontalAlignment.Center
+        touchPropagationMode: TouchPropagationMode.None
         textStyle {
             color: Color.White
             base: SystemDefaults.TextStyles.BodyText
@@ -59,14 +62,15 @@ Container {
         maxWidth: 768 - 48 - 48
         multiline: true
     }
-
-    Timer {
-        id: showTimer
-        interval: 5000
-        onTimeout: {
-            banner.hide();
+    attachedObjects: [
+        Timer {
+            id: showTimer
+            interval: 5000
+            onTimeout: {
+                banner.hide();
+            }
         }
-    }
+    ]
 
     gestureHandlers: [
         TapHandler {

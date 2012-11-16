@@ -8,7 +8,7 @@
 #include <QDebug>
 #include <QMutex>
 #include <QFile>
-#include "timer.hpp"
+#include <QTimer>
 #include "gameengine.hpp"
 #include "commondefs.hpp"
 
@@ -56,7 +56,7 @@ int main(int argc, char **argv)
     if (translator.load(filename, "app/native/qm")) {
         app.installTranslator( &translator );
     }
-    qmlRegisterType<Timer>("CustomTimer",1,0,"Timer");
+    qmlRegisterType<QTimer>("Reversi",1,0,"Timer");
     qmlRegisterUncreatableType<GameEngine>("Reversi", 1, 0, "GameEngine", "should not be created there");
     qmlRegisterUncreatableType<Defs>("Reversi", 1, 0, "Defs", "should not be created there");
 

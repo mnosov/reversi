@@ -27,130 +27,130 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/MainScreenItem.qml" line="228"/>
+        <location filename="../assets/MainScreenItem.qml" line="230"/>
         <source>New</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/MainScreenItem.qml" line="245"/>
+        <location filename="../assets/MainScreenItem.qml" line="247"/>
         <source>Done</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/MainScreenItem.qml" line="245"/>
+        <location filename="../assets/MainScreenItem.qml" line="247"/>
         <source>Setup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/MainScreenItem.qml" line="245"/>
+        <location filename="../assets/MainScreenItem.qml" line="247"/>
         <source>Setup_short</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/MainScreenItem.qml" line="277"/>
+        <location filename="../assets/MainScreenItem.qml" line="279"/>
         <source>Show possible moves</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/MainScreenItem.qml" line="289"/>
+        <location filename="../assets/MainScreenItem.qml" line="291"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/MainScreenItem.qml" line="406"/>
-        <location filename="../assets/MainScreenItem.qml" line="435"/>
+        <location filename="../assets/MainScreenItem.qml" line="409"/>
+        <location filename="../assets/MainScreenItem.qml" line="438"/>
         <source>Black can&apos;t move. White will move once again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/MainScreenItem.qml" line="408"/>
-        <location filename="../assets/MainScreenItem.qml" line="437"/>
+        <location filename="../assets/MainScreenItem.qml" line="411"/>
+        <location filename="../assets/MainScreenItem.qml" line="440"/>
         <source>White can&apos;t move. Black will move once again</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/MainScreenItem.qml" line="455"/>
+        <location filename="../assets/MainScreenItem.qml" line="458"/>
         <source>Human_long</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/MainScreenItem.qml" line="457"/>
+        <location filename="../assets/MainScreenItem.qml" line="460"/>
         <source>Computer - Elementary</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/MainScreenItem.qml" line="459"/>
+        <location filename="../assets/MainScreenItem.qml" line="462"/>
         <source>Computer - Easy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/MainScreenItem.qml" line="461"/>
+        <location filename="../assets/MainScreenItem.qml" line="464"/>
         <source>Computer - Medium</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/MainScreenItem.qml" line="463"/>
+        <location filename="../assets/MainScreenItem.qml" line="466"/>
         <source>Computer - Difficult</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/MainScreenItem.qml" line="465"/>
+        <location filename="../assets/MainScreenItem.qml" line="468"/>
         <source>Computer - Hard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/MainScreenItem.qml" line="467"/>
+        <location filename="../assets/MainScreenItem.qml" line="470"/>
         <source>Computer - Very hard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/MainScreenItem.qml" line="469"/>
+        <location filename="../assets/MainScreenItem.qml" line="472"/>
         <source>Computer - Impossible</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/MainScreenItem.qml" line="471"/>
-        <location filename="../assets/MainScreenItem.qml" line="492"/>
+        <location filename="../assets/MainScreenItem.qml" line="474"/>
+        <location filename="../assets/MainScreenItem.qml" line="495"/>
         <source>Skill %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/MainScreenItem.qml" line="476"/>
+        <location filename="../assets/MainScreenItem.qml" line="479"/>
         <source>Human</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/MainScreenItem.qml" line="478"/>
+        <location filename="../assets/MainScreenItem.qml" line="481"/>
         <source>Elementary</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/MainScreenItem.qml" line="480"/>
+        <location filename="../assets/MainScreenItem.qml" line="483"/>
         <source>Easy</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/MainScreenItem.qml" line="482"/>
+        <location filename="../assets/MainScreenItem.qml" line="485"/>
         <source>Medium</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/MainScreenItem.qml" line="484"/>
+        <location filename="../assets/MainScreenItem.qml" line="487"/>
         <source>Difficult</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/MainScreenItem.qml" line="486"/>
+        <location filename="../assets/MainScreenItem.qml" line="489"/>
         <source>Hard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/MainScreenItem.qml" line="488"/>
+        <location filename="../assets/MainScreenItem.qml" line="491"/>
         <source>Very hard</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/MainScreenItem.qml" line="490"/>
+        <location filename="../assets/MainScreenItem.qml" line="493"/>
         <source>Impossible</source>
         <translation type="unfinished"></translation>
     </message>
