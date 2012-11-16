@@ -1,0 +1,12 @@
+<root>
+  <skills>
+  <sk data = "Human" skill="-1"/>
+  <sk data = "Computer - Elementary" skill = "1"/>
+  <sk data = "Computer - Easy" skill = "2"/>
+  <sk data = "Computer - Medium" skill = "3"/>
+  <sk data = "Computer - Difficult" skill = "4"/>
+  <sk data = "Computer - Hard" skill = "5"/>
+  <sk data = "Computer - Very Hard" skill = "6"/>
+  <sk data = "Computer - Impossible" skill = "7"/>
+  </skills>
+</root>

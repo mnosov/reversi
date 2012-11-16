@@ -12,3 +12,6 @@ Makefile
 *.qm
 *.pro.user
 *.sis
+bb10/x86/*
+bb10/arm/*
+bb10/.settings/*
