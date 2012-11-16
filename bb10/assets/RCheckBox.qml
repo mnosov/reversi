@@ -22,10 +22,10 @@
  ********************************************************************/
 import bb.cascades 1.0
 
-ContainerWithSize {
+Container {
     id: root
     preferredWidth: 400 + 44 + 5*3*2
-    preferredHeight: 80
+    preferredHeight: 100
     signal clicked
     property bool buttonEnabled: true
     property alias text: textBlock.text
@@ -47,13 +47,13 @@ ContainerWithSize {
         }
     }
 
-    ContainerWithSize {
+    Container {
         horizontalAlignment: HorizontalAlignment.Fill
         verticalAlignment: VerticalAlignment.Fill
         background: root.pressed? Color.create("#80ccb872"): Color.create("#ccb872")
     }
 
-    ContainerWithSize {
+    Container {
         horizontalAlignment: HorizontalAlignment.Fill
         verticalAlignment: VerticalAlignment.Fill
         background: Color.Gray
@@ -61,7 +61,7 @@ ContainerWithSize {
         visible: root.buttonEnabled
     }
 
-    ContainerWithSize {
+    Container {
         id: imgCont
         verticalAlignment: VerticalAlignment.Center
         horizontalAlignment: HorizontalAlignment.Left
@@ -74,7 +74,7 @@ ContainerWithSize {
             opacity: root.buttonEnabled? 1.0: 0.3
         }
     }
-    ContainerWithSize {
+    Container {
         id: labelCont
         verticalAlignment: VerticalAlignment.Center
         horizontalAlignment: HorizontalAlignment.Left
@@ -82,6 +82,8 @@ ContainerWithSize {
         layout: DockLayout {
         }
         clipContentToBounds: false
+        topPadding: 10
+        bottomPadding: 10
         Label {
             id: textBlock
             verticalAlignment: VerticalAlignment.Center

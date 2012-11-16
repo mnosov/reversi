@@ -22,7 +22,7 @@
  ********************************************************************/
 import bb.cascades 1.0
 
-ContainerWithSize {
+ContainerLH {
     id: root
     preferredWidth: 200
     maxWidth: preferredWidth
@@ -43,7 +43,7 @@ ContainerWithSize {
             pressed = false;
         }
     }
-    ContainerWithSize {
+    Container {
         horizontalAlignment: HorizontalAlignment.Fill
         verticalAlignment: VerticalAlignment.Fill
         background: pressed? Color.create("#80ccb872"): Color.create("#ccb872")

@@ -24,7 +24,7 @@
 import bb.cascades 1.0
 import Reversi 1.0
 
-ContainerWithSize {
+ContainerLH {
     id: rootWindow
 
     property int chipWidth: 90
@@ -170,7 +170,7 @@ ContainerWithSize {
         //preferredWidth: 650 //TODO infoArea.width - 30
     }
 
-    ContainerWithSize {
+    Container {
         id: infoArea
         horizontalAlignment: HorizontalAlignment.Fill
         verticalAlignment: VerticalAlignment.Bottom
@@ -178,7 +178,7 @@ ContainerWithSize {
         touchPropagationMode: TouchPropagationMode.PassThrough
         overlapTouchPolicy: OverlapTouchPolicy.Allow
         layout: DockLayout {}
-        ContainerWithSize {
+        ContainerLH {
             id: countInfo
             horizontalAlignment: HorizontalAlignment.Fill
             verticalAlignment: VerticalAlignment.Top
@@ -196,7 +196,7 @@ ContainerWithSize {
             }
         }
     }
-    ContainerWithSize {
+    Container {
         id: buttonsRow
         verticalAlignment: VerticalAlignment.Bottom
         horizontalAlignment: HorizontalAlignment.Fill

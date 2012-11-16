@@ -35,85 +35,163 @@ RDialog {
             imageSource: "asset:///images/background.png"
             opacity: 0.5
         }
-        ContainerWithSize {
-            id: dialogTitle
-            verticalAlignment: VerticalAlignment.Top
-            topPadding: 0
-            horizontalAlignment: HorizontalAlignment.Fill
-            leftPadding: 24
-            rightPadding: 24
-            preferredHeight: 192
-            layout: DockLayout {}
-            ImageView {
-                horizontalAlignment: HorizontalAlignment.Left
-                verticalAlignment: VerticalAlignment.Top
-                imageSource: "asset:///images/reversi.png"
-            }
-            
-            Container {
-                id: nameAndVersion
-                horizontalAlignment: HorizontalAlignment.Left
-                verticalAlignment: VerticalAlignment.Fill
-                leftPadding: 192
-                layout: DockLayout {}
-                Label {
-                    id: name
-                    text: qsTr("Reversi")
-                    horizontalAlignment: HorizontalAlignment.Left
-                    textStyle {
-                        color: Color.White
-                        base: SystemDefaults.TextStyles.TitleText
-                        textAlign: TextAlign.Left
-                        fontSize: FontSize.PointValue
-                        fontSizeValue: 60/4
-                    }
-                }
-                Label {
-                    id: version
-                    text: qsTr("Version %1").arg("1.0")
-                    horizontalAlignment: HorizontalAlignment.Left
-                    verticalAlignment: VerticalAlignment.Bottom
-                    textStyle {
-                        color: Color.White
-                        base: SystemDefaults.TextStyles.BodyText
-                        textAlign: TextAlign.Left
-                        fontWeight: FontWeight.Bold
-                        fontSize: FontSize.PointValue
-                        fontSizeValue: 44/4
-                    }
-                }
-            }
-            Container {
-                horizontalAlignment: HorizontalAlignment.Fill
-                verticalAlignment: VerticalAlignment.Fill
-                layout: DockLayout {}
-                RButton {
-                    preferredWidth: 200
-                    text: qsTr("Back")
-                    verticalAlignment: VerticalAlignment.Center
-                    horizontalAlignment: HorizontalAlignment.Right
-                    onClicked: {
-                        rootDialog.reject();
-                    }
-                }
-            }
-        }
         Container {
-            id: separator
-            horizontalAlignment: HorizontalAlignment.Center
-            preferredWidth: 768-12-12
-            verticalAlignment: VerticalAlignment.Top
-            topPadding: 192
-            preferredHeight: 2+192
-            layout: DockLayout {
-                    }
-            touchPropagationMode: TouchPropagationMode.None
-            Container {
-                horizontalAlignment: HorizontalAlignment.Fill
-                verticalAlignment: VerticalAlignment.Fill
-                background: Color.Black
+            horizontalAlignment: HorizontalAlignment.Fill
+            verticalAlignment: VerticalAlignment.Fill
+            layout: StackLayout {
             }
-        }
+	        Container {
+	            id: dialogTitle
+	            //verticalAlignment: VerticalAlignment.Top
+	            //topPadding: 0
+	            horizontalAlignment: HorizontalAlignment.Fill
+	            leftPadding: 24
+	            rightPadding: 24
+	            preferredHeight: 192
+	            layout: DockLayout {}
+	            ImageView {
+	                horizontalAlignment: HorizontalAlignment.Left
+	                verticalAlignment: VerticalAlignment.Top
+	                imageSource: "asset:///images/reversi.png"
+	            }
+	            Container {
+	                id: nameAndVersion
+	                horizontalAlignment: HorizontalAlignment.Left
+	                verticalAlignment: VerticalAlignment.Fill
+	                leftPadding: 192
+	                layout: DockLayout {}
+	                Label {
+	                    id: name
+	                    text: qsTr("Reversi")
+	                    horizontalAlignment: HorizontalAlignment.Left
+	                    textStyle {
+	                        color: Color.White
+	                        base: SystemDefaults.TextStyles.TitleText
+	                        textAlign: TextAlign.Left
+	                        fontSize: FontSize.PointValue
+	                        fontSizeValue: 60/4
+	                    }
+	                }
+	                Label {
+	                    id: version
+	                    text: qsTr("Version %1").arg("1.0")
+	                    horizontalAlignment: HorizontalAlignment.Left
+	                    verticalAlignment: VerticalAlignment.Bottom
+	                    textStyle {
+	                        color: Color.White
+	                        base: SystemDefaults.TextStyles.BodyText
+	                        textAlign: TextAlign.Left
+	                        fontWeight: FontWeight.Bold
+	                        fontSize: FontSize.PointValue
+	                        fontSizeValue: 44/4
+	                    }
+	                }
+	            }
+	            Container {
+	                horizontalAlignment: HorizontalAlignment.Fill
+	                verticalAlignment: VerticalAlignment.Fill
+	                layout: DockLayout {}
+	                RButton {
+	                    preferredWidth: 200
+	                    text: qsTr("Back")
+	                    verticalAlignment: VerticalAlignment.Center
+	                    horizontalAlignment: HorizontalAlignment.Right
+	                    onClicked: {
+	                        rootDialog.reject();
+	                    }
+	                }
+	            }
+	        }
+	        Container {
+	            id: separator
+	            horizontalAlignment: HorizontalAlignment.Center
+	            preferredWidth: 768-12-12
+	            //verticalAlignment: VerticalAlignment.Top
+	            //topPadding: 192
+	            preferredHeight: 2
+	            layout: DockLayout {
+	                    }
+	            touchPropagationMode: TouchPropagationMode.None
+	            Container {
+	                horizontalAlignment: HorizontalAlignment.Fill
+	                verticalAlignment: VerticalAlignment.Fill
+	                background: Color.Black
+	            }
+	        }
+	        ListView {
+                rootIndexPath: [0]
+                dataModel: XmlDataModel { source: "models/about.xml" }
+		        listItemComponents: [
+		            ListItemComponent {
+			            type: "title"
+			            Container {
+			                id: listCont
+			                preferredWidth: 768
+			                layout: DockLayout {}
+			                leftPadding: 24
+			                rightPadding: 24
+			                property string dt: ListItemData.data
+			                Label {
+			                    horizontalAlignment: HorizontalAlignment.Fill
+	                            textStyle {
+	                                color: Color.White
+	                                base: SystemDefaults.TextStyles.TitleText
+	                                textAlign: TextAlign.Left
+	                                fontSize: FontSize.PointValue
+	                                fontSizeValue: 40/4
+	                                fontWeight: FontWeight.Bold
+	                            }
+	                            multiline: true
+	                            text: {
+	                                //TODO: localize this
+	                                if (listCont.dt == "rules") {
+	                                    return "Game description and rules:"
+	                                } else if (listCont.dt == "authors") {
+	                                    return "Authors:"                                
+	                                }
+	                                return "";
+	                            }
+	                        }
+	                    }
+	                },
+		            ListItemComponent {
+			            type: "body"
+			            Container {
+			                id: listContBody
+			                preferredWidth: 768
+			                layout: DockLayout {}
+			                leftPadding: 24
+			                rightPadding: 24
+			                property string dt: ListItemData.data
+			                Label {
+			                    horizontalAlignment: HorizontalAlignment.Fill
+	                            textStyle {
+	                                color: Color.White
+	                                base: SystemDefaults.TextStyles.BodyText
+	                                textAlign: TextAlign.Left
+	                                fontSize: FontSize.PointValue
+	                                fontSizeValue: 32/4
+	                            }
+	                            multiline: true
+	                            text: {
+	                                //TODO: localize this
+	                                if (listContBody.dt == "desc and rules") {
+	                                    return "A Reversi (or sometimes called Othello) game is a simple game between two players on 8x8 board. If a player's piece is captured by an opposing player, that piece is turned over to reveal the color of that player. A winner is declared when one player has more pieces of his own color on the board and there are no more possible moves."
+	                                } else if (listContBody.dt == "license") {
+	                                    return "This open source game is based on open source game KReversi for KDE (http://games.kde.org/kreversi). Source code and license details of this application is available on GitHub (https://github.com/mnosov/reversi)"                                
+	                                } else if (listContBody.dt == "nosov") {
+	                                    return "Michael Nosov is an author of this application for BlackBerry 10, Symbian^3 and MeeGo mobile devices. For bug reporting use this email <Michael.Nosov@gmail.com>"
+	                                } else if (listContBody.dt == "kde") {
+	                                    return "For information about authors of original KReversi application for KDE4 please refer to application's source code on GitHub (https://github.com/mnosov/reversi) or The KDE Games Center (http://games.kde.org/kreversi)"
+	                                }
+	                                return "";
+	                            }
+	                        }
+	                    }
+	                }
+	            ]
+			}
+	    }
 
 /*
         Flickable {

@@ -4,17 +4,17 @@
 <context>
     <name>AboutScreen</name>
     <message>
-        <location filename="../assets/AboutScreen.qml" line="61"/>
+        <location filename="../assets/AboutScreen.qml" line="65"/>
         <source>Reversi</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/AboutScreen.qml" line="73"/>
+        <location filename="../assets/AboutScreen.qml" line="77"/>
         <source>Version %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../assets/AboutScreen.qml" line="92"/>
+        <location filename="../assets/AboutScreen.qml" line="96"/>
         <source>Back</source>
         <translation type="unfinished"></translation>
     </message>

@@ -22,7 +22,7 @@
  ********************************************************************/
 import bb.cascades 1.0
 
-ContainerWithSize {
+ContainerLH {
     property int animDuration: 300
     id: rootDialog
 
