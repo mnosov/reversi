@@ -108,6 +108,7 @@ RDialog {
 	            preferredWidth: 768-12-12
 	            //verticalAlignment: VerticalAlignment.Top
 	            //topPadding: 192
+	            rotationZ: 0.01
 	            preferredHeight: 2
 	            layout: DockLayout {
 	                    }

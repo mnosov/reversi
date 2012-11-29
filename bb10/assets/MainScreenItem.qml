@@ -270,16 +270,24 @@ ContainerLH {
         }
     }
 
-    RCheckBox {
+    Container {
         verticalAlignment: VerticalAlignment.Bottom
         bottomPadding: buttonsRow.bottomPadding - 100
         horizontalAlignment: HorizontalAlignment.Left
         leftPadding: 20
         rightPadding: 20
-        text: qsTr("Show possible moves")
-        buttonEnabled: rootWindow.showPossibleMoves
-        onClicked: {
-            rootWindow.showPossibleMoves = !rootWindow.showPossibleMoves
+        preferredHeight: checkBox.preferredHeight
+        layout: DockLayout {
+        }
+        RCheckBox {
+            id: checkBox
+            verticalAlignment: VerticalAlignment.Bottom
+            horizontalAlignment: HorizontalAlignment.Left
+            text: qsTr("Show possible moves")
+            buttonEnabled: rootWindow.showPossibleMoves
+            onClicked: {
+                rootWindow.showPossibleMoves = !rootWindow.showPossibleMoves
+            }
         }
     }
 

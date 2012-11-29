@@ -28,6 +28,7 @@ ContainerLH {
     maxWidth: preferredWidth
     minWidth: preferredWidth
     preferredHeight: 100
+    rotationZ: 0.01
     signal clicked(int mouseWindowX, int mouseWindowY)
     property bool buttonEnabled: true
     property alias text: textBlock.text
