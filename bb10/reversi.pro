@@ -3,12 +3,13 @@ TARGET = reversi
 
 CONFIG += qt warn_on debug_and_release cascades
 
-INCLUDEPATH += ../src
-SOURCES += ../src/*.cpp
-HEADERS += ../src/*.hpp ../src/*.h
+BASEDIR = $$_PRO_FILE_PWD_
+INCLUDEPATH += $$BASEDIR/src
+SOURCES += $$BASEDIR/src/*.cpp
+HEADERS += $$BASEDIR/src/*.hpp $$BASEDIR/src/*.h
 
 lupdate_inclusion {
-    SOURCES += ../assets/*.qml
+    SOURCES += $$BASEDIR/assets/*.qml
 }
 
 device {

@@ -6,39 +6,16 @@
 #include <QLocale>
 #include <QTranslator>
 #include <QDebug>
-#include <QMutex>
-#include <QFile>
 #include <QTimer>
 #include "gameengine.hpp"
 #include "commondefs.hpp"
 
 using ::bb::cascades::Application;
 
-static QFile *file = 0;
-static QMutex* logMutex = 0;
 void myMessageOutputFile(QtMsgType type, const char *msg)
 {
-    if (!logMutex) {
-        logMutex = new QMutex();
-    }
-
-    QMutexLocker locker (logMutex);
     Q_UNUSED(type);
 
-    if (!file) {
-        file = new QFile("/accounts/1000/shared/documents/reversi_log.txt");
-        bool ok = file->open(QFile::WriteOnly);
-        if (!ok) {
-            delete file;
-            file = 0;
-        }
-    }
-
-    if (file) {
-        file->write(msg);
-        file->write("\r\n");
-        file->flush();
-    }
     printf("%s\r\n", msg);
     fflush(stdout);
 }

@@ -114,11 +114,13 @@ ContainerLH {
         layout: GridListLayout {
             columnCount: 8
         }
+        scrollIndicatorMode: ScrollIndicatorMode.None
         horizontalAlignment: HorizontalAlignment.Fill
         verticalAlignment: VerticalAlignment.Fill
         dataModel: gameModel
         //enabled: false
         touchPropagationMode: TouchPropagationMode.PassThrough
+        // flickMode: FlickMode.None
         function makeMoveProxy(index) {
             gameEngine.makeMove(index);
         }
@@ -503,6 +505,24 @@ ContainerLH {
         return qsTr("Skill %1").arg(skill)
     }
 
+    ImageView {
+        id: splash
+        imageSource: "asset:///images/splash.png"
+        attachedObjects: [
+            Timer {
+                id: hideSpashTimer
+                interval: 700
+                singleShot: true
+                onTimeout: {
+                    splash.resetImageSource();
+                    splash.visible = false;
+                }
+            }
+        ]
+        onCreationCompleted: {
+            hideSpashTimer.start();
+        }
+    }
     onCreationCompleted: {
         /*console.log("Main item loaded:"+rootWindow.width+"x"+rootWindow.height);
         skillModel.append({"data": getStringForSkill(true, -1), "skill": -1});

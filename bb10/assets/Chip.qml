@@ -32,7 +32,7 @@ Container {
     maxHeight: 90
     minWidth: 90
     maxWidth: 90
-    //implicitLayoutAnimationsEnabled: false
+    implicitLayoutAnimationsEnabled: false
     signal clicked
     //background: (curColor == Defs.White)? Color.Red: Color.Transparent
 
@@ -104,22 +104,14 @@ Container {
 
     ImageView {
         id: imgContent
+        implicitLayoutAnimationsEnabled: false
         horizontalAlignment: HorizontalAlignment.Center
         verticalAlignment: VerticalAlignment.Center
         imageSource: ""
         opacity: (chipRoot.curColor == Defs.NoColor)? 0: 1
-        //property real scaleFactor: (gameEngine.setupMode? 1.15: 1)
-        //scale: opacity * scaleFactor
         scaleX: (chipRoot.curColor == Defs.NoColor)? 0: 1
         scaleY: (chipRoot.curColor == Defs.NoColor)? 0: 1
-        /*Behavior on opacity {
-            NumberAnimation { duration: chipRoot.animDuration }
-        }*/
     }
-
-    /*Behavior on imgIndex {
-        NumberAnimation { duration: chipRoot.animDuration }
-    }*/
 
     gestureHandlers: [
         TapHandler {

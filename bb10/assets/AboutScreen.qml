@@ -74,7 +74,7 @@ RDialog {
 	                }
 	                Label {
 	                    id: version
-	                    text: qsTr("Version %1").arg("1.0")
+	                    text: qsTr("Version %1").arg("1.01")
 	                    horizontalAlignment: HorizontalAlignment.Left
 	                    verticalAlignment: VerticalAlignment.Bottom
 	                    textStyle {
@@ -122,6 +122,7 @@ RDialog {
 	        ListView {
                 rootIndexPath: [0]
                 dataModel: XmlDataModel { source: "models/about.xml" }
+                scrollIndicatorMode: ScrollIndicatorMode.None
 		        listItemComponents: [
 		            ListItemComponent {
 			            type: "title"
