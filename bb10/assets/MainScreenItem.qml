@@ -107,6 +107,9 @@ ContainerLH {
 	                lastUndo = !gameEngine.undo();
 	            }
 	        }
+	    },
+	    Constants {
+	        id: constants;
 	    }
 	]
     ListView {
@@ -195,7 +198,7 @@ ContainerLH {
         id: infoArea
         horizontalAlignment: HorizontalAlignment.Fill
         verticalAlignment: VerticalAlignment.Bottom
-        bottomPadding: 1280-768-140-10
+        bottomPadding: constants.screenHeight - constants.screenWidth - 140 - 10
         touchPropagationMode: TouchPropagationMode.PassThrough
         overlapTouchPolicy: OverlapTouchPolicy.Allow
         layout: DockLayout {}

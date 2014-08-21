@@ -58,7 +58,7 @@ RDialog {
             type: "sk"
             Container {
                 id: listCont
-                preferredWidth: 768
+                preferredWidth: constants.screenWidth
                 preferredHeight: 140
                 property int index: ListItem.indexInSection
                 property int selectedIndexProxy: ListItem.view.selectedIndexProxy
@@ -68,6 +68,11 @@ RDialog {
                 function rejectProxy() {
                     ListItem.view.rejectProxy()
                 }
+                attachedObjects: [
+                    Constants {
+                        id: constants
+                    }
+                ]
                 layout: DockLayout {
                             
                         }
@@ -84,7 +89,7 @@ RDialog {
                 }
                 property bool pressed: false
                 Container {
-                    preferredWidth: Math.max(700 + 40, 200)
+                    preferredWidth: constants.screenWidth-28
                     preferredHeight: 140
                     horizontalAlignment: HorizontalAlignment.Center
                     layout: DockLayout {
@@ -103,7 +108,7 @@ RDialog {
                         text: qsTr(ListItemData.data)
                         textStyle {
                             color: (listCont.selectedIndexProxy == listCont.index)? Color.Blue: Color.White
-                            base: SystemDefaults.TextStyles.BigText
+                            base: SystemDefaults.TextStyles.BodyText
                             textAlign: TextAlign.Left
                         }
                         //font.pixelSize: 26*UI.PLATFORM_SCALE_FACTOR

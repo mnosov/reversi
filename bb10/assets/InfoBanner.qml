@@ -26,7 +26,7 @@ import Reversi 1.0
 Container {
     id: banner
 //    height: text.height + 24*UI.PLATFORM_SCALE_FACTOR
-    preferredWidth: 768-48
+    preferredWidth: constants.screenWidth-48
     minWidth: preferredWidth
     maxWidth: preferredWidth
     background: Color.Black //TODO: opacity and round corners
@@ -59,7 +59,7 @@ Container {
             base: SystemDefaults.TextStyles.BodyText
             textAlign: TextAlign.Center
         }
-        maxWidth: 768 - 48 - 48
+        maxWidth: constants.screenWidth - 48 - 48
         multiline: true
     }
     attachedObjects: [
@@ -69,6 +69,9 @@ Container {
             onTimeout: {
                 banner.hide();
             }
+        },
+        Constants {
+            id: constants;
         }
     ]
 

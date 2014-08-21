@@ -74,7 +74,7 @@ RDialog {
 	                }
 	                Label {
 	                    id: version
-	                    text: qsTr("Version %1").arg("1.01")
+	                    text: qsTr("Version %1").arg("1.1")
 	                    horizontalAlignment: HorizontalAlignment.Left
 	                    verticalAlignment: VerticalAlignment.Bottom
 	                    textStyle {
@@ -105,7 +105,7 @@ RDialog {
 	        Container {
 	            id: separator
 	            horizontalAlignment: HorizontalAlignment.Center
-	            preferredWidth: 768-12-12
+                preferredWidth: c3.screenWidth-12-12
 	            //verticalAlignment: VerticalAlignment.Top
 	            //topPadding: 192
 	            rotationZ: 0.01
@@ -113,6 +113,11 @@ RDialog {
 	            layout: DockLayout {
 	                    }
 	            touchPropagationMode: TouchPropagationMode.None
+	            attachedObjects: [
+	                Constants {
+	                    id: c3
+	                }
+	            ]
 	            Container {
 	                horizontalAlignment: HorizontalAlignment.Fill
 	                verticalAlignment: VerticalAlignment.Fill
@@ -128,11 +133,16 @@ RDialog {
 			            type: "title"
 			            Container {
 			                id: listCont
-			                preferredWidth: 768
+                            preferredWidth: constants.screenWidth
 			                layout: DockLayout {}
 			                leftPadding: 24
 			                rightPadding: 24
 			                property string dt: ListItemData.data
+			                attachedObjects: [
+			                    Constants {
+			                        id: constants
+			                    }
+			                ]
 			                Label {
 			                    horizontalAlignment: HorizontalAlignment.Fill
 	                            textStyle {
@@ -160,12 +170,17 @@ RDialog {
 			            type: "body"
 			            Container {
 			                id: listContBody
-			                preferredWidth: 768
+                            preferredWidth: constants2.screenWidth
 			                layout: DockLayout {}
 			                leftPadding: 24
 			                rightPadding: 24
 			                property string dt: ListItemData.data
-			                Label {
+                            attachedObjects: [
+                                Constants {
+                                    id: constants2
+                                }
+                            ]
+                            Label {
 			                    horizontalAlignment: HorizontalAlignment.Fill
 	                            textStyle {
 	                                color: Color.White

@@ -142,6 +142,7 @@
 //#include "kreversigame.h"
 #include <QApplication>
 #include <QDebug>
+#include <QTime>
 
 // ================================================================
 //           Classes SquareStackEntry and SquareStack
@@ -274,10 +275,12 @@ static const int ILLEGAL_VALUE = 8888888;
 static const int BC_WEIGHT     = 3;
 
 
-Engine::Engine(int st, int sd)/* : SuperEngine(st, sd) */
+Engine::Engine(int st, int sd)
     : m_strength(st), m_computingMove( false )
 {
-//  m_random.setSeed(sd);
+    QTime time = QTime::currentTime();
+    qsrand((uint)time.msec());
+
   m_score = new Score;
   m_bc_score = new Score;
   SetupBcBoard();
@@ -285,10 +288,12 @@ Engine::Engine(int st, int sd)/* : SuperEngine(st, sd) */
 }
 
 
-Engine::Engine(int st) //: SuperEngine(st)
+Engine::Engine(int st)
     : m_strength(st), m_computingMove(false)
 {
-//  m_random.setSeed(0);
+    QTime time = QTime::currentTime();
+    qsrand((uint)time.msec());
+
   m_score = new Score;
   m_bc_score = new Score;
   SetupBcBoard();
@@ -296,10 +301,12 @@ Engine::Engine(int st) //: SuperEngine(st)
 }
 
 
-Engine::Engine()// : SuperEngine(1)
+Engine::Engine()
     : m_strength(1), m_computingMove(false)
 {
-//  m_random.setSeed(0);
+    QTime time = QTime::currentTime();
+    qsrand((uint)time.msec());
+
   m_score = new Score;
   m_bc_score = new Score;
   SetupBcBoard();

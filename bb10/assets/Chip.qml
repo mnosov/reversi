@@ -81,9 +81,18 @@ Container {
     Container {
         horizontalAlignment: HorizontalAlignment.Fill
         verticalAlignment: VerticalAlignment.Fill
-        background: Color.Gray
-        opacity: pressed? 1.0: 0.0
-        visible: opacity > 0.0
+        topPadding: 10
+        bottomPadding: 10
+        leftPadding: 10
+        rightPadding: 10
+        layout: DockLayout {      
+        }
+        Container {
+            horizontalAlignment: HorizontalAlignment.Fill
+            verticalAlignment: VerticalAlignment.Fill
+            background: Color.Gray
+            opacity: chipRoot.pressed? 1.0: 0.0
+        }
     }
 
     Container {
